@@ -57,12 +57,12 @@ $120$Hz to the transmitter which allows better signal
 sampling. This frequency bandwidth was used to find the less
 time consuming operational settings able to recover the
 Cole-Cole exponent and relaxation time, in other words,
-which are the minimum number of evenly spaced frequency
+which are the minimum number of frequency
 samples that is necessary to reconstruct the Cole-Cole curve.  
 
 A inversion scheme based on the partial sweep of the
 solution space was implemented in OCTAVE. We found that $8$
-frequency samples are enough to recover the relaxation time
+frequency samples evenly spaced are enough to recover the relaxation time
 with variations below one order of magnitude. Therefore, the
 results showed good performance for the developed lock-in
 resistivimeter. The suggested applications to such equipment
@@ -100,7 +100,7 @@ electrical noise.
 %The transmitter generate a senoidal wave which is sent directly to the receiver while is also sent across the earth to the receiver. Inside the receiver the signals are multiplied together and then filtered by a low-pass filter.
 
 
-In our work we design the transmitter and receiver, both which has two channels. The reference channel is fed directly in the receiver while the signal channel is injected from the transmitter into the subsurface and then to the receiver. The ideal lock-in transmitter would have a infinite frequency sweep without any distortion and would delivery constant power of 100 Watts for all frequencies. Ours transmitter deliver a stable power close to 60 Watts for the frequency band of 13 to 120 Hz with minimal distortion. Bellow 13 Hz the electrical sin wave distortion increase drastically with frequency.
+In our work we design the transmitter and receiver, both which has two channels. The reference channel is fed directly in the receiver while the signal channel is injected from the transmitter into the subsurface and then to the receiver. The ideal lock-in transmitter would have a infinite frequency sweep without any distortion and would delivery constant power for all frequencies. Ours transmitter deliver a stable power close to 60 Watts for the frequency band of 13 to 120 Hz with minimal distortion. Bellow 13 Hz the electrical sine wave distortion increase drastically with frequency.
 
 Inside the receiver the two input signals are multiplied together and then filtered by a low-pass filter of frequency no greater than the input wave, the resulting DC voltage will be proportional only to the resistivity if the two inputs are in phase, and only to the imaginary resistivity %electric permittivity
  if they are in quadrature. Where the last is related to polarization effects.
@@ -112,7 +112,7 @@ Inside the receiver the two input signals are multiplied together and then filte
 
 \section{Sincronous Detection}
 
-The synchronous detection also known as Lock-in uses two signals, this method is sensitive to the difference of frequency and phase between the reference input for that reason it can track signals with the same characteristics of the reference channel attenuating any others. 
+The synchronous detection also known as Lock-in uses two signals, this method is sensitive to the difference of frequency and phase between the two inputs. For that reason it can track signals with the same characteristics of the reference channel attenuating any others whose frequency or phase differ from it. 
 
 % synchronous detection baixa deriva termica, experimento durou horas
 
