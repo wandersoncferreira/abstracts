@@ -27,56 +27,49 @@
 \usepackage{hyperref}
 \hypersetup{colorlinks=true}
 \hypersetup{citecolor=blue}
-\hypersetup{pdftitle={Global optimization for AVO inversion: Analysis of ray 
-theory based forward modelling algorithm}}
-\hypersetup{pdfauthor={W.~C.~Ferreira, F.~Hilterman, L.~A.~Diogo, 
-J.~Schleicher and H.~B.~Santos}}
+\hypersetup{pdftitle={Development of lock-in resistivimeter
+for measuring resistivity and induced polarization under
+high electrical noise}}
+\hypersetup{pdfauthor={J.~M.~Oliveira and F.~Hiodo}}
 % For making a print without color links
 \hypersetup{linkcolor=black,citecolor=black,filecolor=black,urlcolor=black}
 \hypersetup{linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
 \usepackage{url}
-
-
-% Criar fluxogramas
-\usepackage[latin1]{inputenc}
-\usepackage{tikz}
-\usetikzlibrary{shapes,arrows} 
-
-% definindo blocos para o fluxograma
-\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
-    text width=6.5em, text badly centered, node distance=3cm, inner 
-    sep=0pt]
-\tikzstyle{decisionmi} = [diamond, draw, fill=blue!20, 
-    text width=1.5em, text badly centered, node distance=3cm, inner 
-    sep=0pt]
-\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
-    text width=16em, text centered, rounded corners, minimum height=4em]
-\tikzstyle{blockm} = [rectangle, draw, fill=blue!20, 
-    text width=6em, text centered, rounded corners, minimum height=4em]
-\tikzstyle{blockmg} = [rectangle, draw, fill=blue!20, 
-    text width=10em, text centered, rounded corners, minimum height=2em]
-\tikzstyle{blockmi} = [rectangle, draw, fill=blue!20, 
-    text width=3em, text centered, rounded corners, minimum height=2em]
-\tikzstyle{blockf} = [rectangle, draw, fill=blue!20, 
-    text width=16em, text centered, rounded corners, minimum height=4em]
-\tikzstyle{line} = [draw, -latex']
-\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
-    minimum height=3em]
-\tikzstyle{cloudr} = [draw, ellipse,fill=green!20, node distance=3cm,
-    minimum height=3em]
-
 \begin{document}
 
-
-\title{Development of lock-in resistivimeter for measuring resistivity and induced polarization}
-\author{J.~Oliveira and F.~Hiodo}
+\title{Development of lock-in resistivimeter for measuring
+resistivity and induced polarization under high electrical noise}
+\author{J.~M.~Oliveira and F.~Hiodo}
 \maketitle
 
 % Nota: geralmente a EAGE limita o numero de caracteres no abstract. 
 
 \begin{abstract}
 
-		Scaled models of Cole-Cole RC circuit and reduced Clay model were tested with three levels of white noise in order to develop a low cost lock-in resistivimeter. Such device had maximum power of 60 Watts and displayed reliable stability under $67 \%$ and $11 \%$ of white noise in the respective models. Made with low cost components the resistivemeter had a frequency sweep from $13$ to $120$ Hertz. We used this frequency bandwidth to find the less time consuming operational settings able to recovered the Cole-Cole exponent and relaxation time. In order to test i we wrote a OCTAVE inversion algoritm and found it $8$ sample frequency evenly spaced in the bandwidth were enough for recovery of relaxation time with deviation of less than a order of magnitude. Our results points towards application in lab samples and the field, the latter could be used not only for SIP but for resistivity and IP as well even under high electrical noise.
+	The Cole-Cole RC circuit model and the reduced clay model
+were tested with three levels of white noise in order to
+develop a low cost lock-in resistivimeter. The device has
+maximum power of 60 watts and showed reliable stability
+under $67 \%$ and $11 \%$ of white noise in the respective
+models. The equipment was made with low cost components and
+yet capable of providing a frequency sweep from $13$ to
+$120$Hz to the transmitter which allows better signal
+sampling. This frequency bandwidth was used to find the less
+time consuming operational settings able to recover the
+Cole-Cole exponent and relaxation time, in other words,
+which are the minimum number of evenly spaced frequency
+samples is necessary to reconstruct the Cole-Cole curve.  
+
+A inversion scheme based on the partial sweep of the
+solution space was implemented in OCTAVE. We found that $8$
+frequency samples are enough to recover the relaxation time
+with variations below one order of magnitude. Therefore, the
+results showed good performance for the developed lock-in
+resistivimeter. The suggested applications to such equipment
+is not only restricted to field measurements but also to lab
+samples studies related to Spectral Induced Polarization
+(SIP), resistivity and Induced Polarization (IP) under high
+electrical noise.  
 \end{abstract}	
 		
 
