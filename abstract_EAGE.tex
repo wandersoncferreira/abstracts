@@ -95,15 +95,46 @@ electrical noise.
 
 
 
-%Urban areas are characterized as noise areas to geoelectrical methods due to the electrical noise from power supply, grounding and stray voltages. Intrusive methods are affected by pavimentation and buildings with restrain the superficial area making them more susceptible to noise.
-%We design and build a resistivimeter 
-%The transmitter generate a senoidal wave which is sent directly to the receiver while is also sent across the earth to the receiver. Inside the receiver the signals are multiplied together and then filtered by a low-pass filter.
+Urban regions are characterized by a high noise content to
+the geoelectrical methods mainly due to the electrical noise
+from the power supply, grounding and stray voltages. It's
+also known that intrusive methods are affected by
+pavimentation and buildings which impose restrains in the
+superficial area making them more susceptible to noise.
+%We design and build a resistivimeter The transmitter
+%generate a senoidal wave which is sent directly to the
+%receiver while is also sent across the earth to the
+%receiver. Inside the receiver the signals are multiplied
+%together and then filtered by a low-pass filter.
+
+%% Falar do que foi feito e por que.
+%% re-fazer
+The development of this work was the design the transmitter and receiver, both
+which has two channels. The reference channel is fed
+directly in the receiver while the signal channel is
+injected from the transmitter into the subsurface and then
+to the receiver. 
+
+%% teoria do lock-in aqui.
+The ideal lock-in transmitter would have an infinite
+frequency sweep without any distortion and would deliver
+constant power for all frequencies. However, due to physical
+limitation our transmitter is capable of provide a stable
+power supply close to 60W for the frequency bandwidth of 13
+to 120Hz with minimal distortion.  However, as the
+frequencies goes bellow the 13Hz the electrical sine wave
+distortion increases drastically.
 
 
-In our work we design the transmitter and receiver, both which has two channels. The reference channel is fed directly in the receiver while the signal channel is injected from the transmitter into the subsurface and then to the receiver. The ideal lock-in transmitter would have a infinite frequency sweep without any distortion and would delivery constant power for all frequencies. Ours transmitter deliver a stable power close to 60 Watts for the frequency band of 13 to 120 Hz with minimal distortion. Bellow 13 Hz the electrical sine wave distortion increase drastically with frequency.
-
-Inside the receiver the two input signals are multiplied together and then filtered by a low-pass filter of frequency no greater than the input wave, the resulting DC voltage will be proportional only to the resistivity if the two inputs are in phase, and only to the imaginary resistivity %electric permittivity
- if they are in quadrature. Where the last is related to polarization effects.
+%% Usar um esquema aqui para explicar o que tem abaixo. Vale
+%a pena.
+Inside the receiver the two input signals are multiplied
+together and then filtered by a low-pass filter of frequency
+no greater than the input wave, the resulting DC voltage
+will be proportional only to the resistivity if the two
+inputs are in phase, and only to the imaginary resistivity
+electric permittivity if they are in quadrature. Where the
+last is related to polarization effects.
 
 % Figura sistema
 % transfer function do equipamento
@@ -112,9 +143,16 @@ Inside the receiver the two input signals are multiplied together and then filte
 
 \section{Sincronous Detection}
 
-The synchronous detection also known as Lock-in uses two signals, this method is sensitive to the difference of frequency and phase between the two inputs. For that reason it can track signals with the same characteristics of the reference channel attenuating any others whose frequency or phase differ from it. 
+The synchronous detection also known as lock-in uses two
+signals "USA DOIS SINAIS PARA QUE?", this method is
+sensitive to the difference of frequency and phase between
+the two inputs. For that reason it can track signals with
+the same characteristics of the reference channel
+attenuating any others whose frequency or phase differ from
+it. 
 
-% synchronous detection baixa deriva termica, experimento durou horas
+% synchronous detection baixa deriva termica, experimento
+% durou horas
 
 
 \section{Examples (Optional)}
