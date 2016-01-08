@@ -96,8 +96,7 @@ electrical noise.
 
 
 Urban regions are characterized by a high noise content to
-the geoelectrical methods mainly due to the electrical noise
-from the power supply, grounding and stray voltages. It's
+the geoelectrical methods mainly due to presence of power supply, grounding and stray voltages. It's
 also known that intrusive methods are affected by
 pavimentation and buildings which impose restrains in the
 superficial area making them more susceptible to noise.
@@ -109,21 +108,24 @@ superficial area making them more susceptible to noise.
 
 %% Falar do que foi feito e por que.
 %% re-fazer
-The development of this work was the design the transmitter and receiver, both
-which has two channels. The reference channel is fed
+The development of this work was the design an synchronous detection resistivimeter
+of low cost to conduct resistivity and IP survey using low power.
+It consist of transmitter and receiver, with two channels each. 
+The reference channel is fed
 directly in the receiver while the signal channel is
 injected from the transmitter into the subsurface and then
 to the receiver. 
 
 %% teoria do lock-in aqui.
-The ideal lock-in transmitter would have an infinite
+An ideal lock-in transmitter would have an infinite
 frequency sweep without any distortion and would deliver
 constant power for all frequencies. However, due to physical
 limitation our transmitter is capable of provide a stable
 power supply close to 60W for the frequency bandwidth of 13
-to 120Hz with minimal distortion.  However, as the
-frequencies goes bellow the 13Hz the electrical sine wave
-distortion increases drastically.
+to 120Hz with minimal distortion.  Bellow the 13Hz threshold
+the electrical sine wave distortion increases drastically and
+above the 120Hz there is little gain of information due to 
+logarithmic nature of frequency.
 
 
 %% Usar um esquema aqui para explicar o que tem abaixo. Vale
@@ -133,8 +135,10 @@ together and then filtered by a low-pass filter of frequency
 no greater than the input wave, the resulting DC voltage
 will be proportional only to the resistivity if the two
 inputs are in phase, and only to the imaginary resistivity
-electric permittivity if they are in quadrature. Where the
+ if they are in quadrature. Where the
 last is related to polarization effects.
+
+%imaginary resistivity pode ser electric permittivity, NÃO REMOVA ESSE PERCENT!
 
 % Figura sistema
 % transfer function do equipamento
