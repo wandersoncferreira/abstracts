@@ -1,0 +1,235 @@
+\documentclass{vie16}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{adjustbox}
+
+% Path to figures
+\graphicspath{{Fig/}}
+
+% COMENTAR ANTES DE SUBMETER!
+% Comando temporarios
+\usepackage{color}
+\usepackage[normalem]{ulem}
+\newcommand{\new}[1]{\textcolor{blue}{#1}}
+\newcommand{\old}[1]{\textcolor{MyDarkViolet}{\sout{#1}}}
+\newcommand{\att}[1]{\textcolor{red}{#1}}
+\newcommand{\js}[1]{\textcolor{darkgreen}{#1}}
+\newcommand{\obs}[1]{\textcolor{orange}{#1}}
+\definecolor{MyDarkViolet}{rgb}{0.602,0,0.602}
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{darkgreen}{RGB}{0,127,0}
+
+% For pdf hyperlinks
+\usepackage{hyperref}
+\hypersetup{colorlinks=true}
+\hypersetup{citecolor=blue}
+\hypersetup{pdftitle={Global optimization for AVO inversion: Analysis of ray 
+theory based forward modelling algorithm}}
+\hypersetup{pdfauthor={W.~C.~Ferreira, F.~Hilterman, L.~A.~Diogo, 
+J.~Schleicher and H.~B.~Santos}}
+% For making a print without color links
+\hypersetup{linkcolor=black,citecolor=black,filecolor=black,urlcolor=black}
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
+\usepackage{url}
+
+
+% Criar fluxogramas
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows} 
+
+% definindo blocos para o fluxograma
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=6.5em, text badly centered, node distance=3cm, inner 
+    sep=0pt]
+\tikzstyle{decisionmi} = [diamond, draw, fill=blue!20, 
+    text width=1.5em, text badly centered, node distance=3cm, inner 
+    sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=16em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{blockm} = [rectangle, draw, fill=blue!20, 
+    text width=6em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{blockmg} = [rectangle, draw, fill=blue!20, 
+    text width=10em, text centered, rounded corners, minimum height=2em]
+\tikzstyle{blockmi} = [rectangle, draw, fill=blue!20, 
+    text width=3em, text centered, rounded corners, minimum height=2em]
+\tikzstyle{blockf} = [rectangle, draw, fill=blue!20, 
+    text width=16em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=3em]
+\tikzstyle{cloudr} = [draw, ellipse,fill=green!20, node distance=3cm,
+    minimum height=3em]
+
+\begin{document}
+
+
+\title{Development of lock-in resistivimeter for measuring resistivity and induced polarization}
+\author{J.~Oliveira and F.~Hiodo}
+\maketitle
+
+% Nota: geralmente a EAGE limita o numero de caracteres no abstract. 
+
+\begin{abstract}
+
+		Scaled models of Cole-Cole RC circuit and reduced Clay model were tested with three levels of white noise in order to develop a low cost lock-in resistivimeter. Such device had maximum power of 60 Watts and displayed reliable stability under $67 \%$ and $11 \%$ of white noise in the respective models. Made with low cost components the resistivemeter had a frequency sweep from $13$ to $120$ Hertz. We used this frequency bandwidth to find the less time consuming operational settings able to recovered the Cole-Cole exponent and relaxation time. In order to test i we wrote a OCTAVE inversion algoritm and found it $8$ sample frequency evenly spaced in the bandwidth were enough for recovery of relaxation time with deviation of less than a order of magnitude. Our results points towards application in lab samples and the field, the latter could be used not only for SIP but for resistivity and IP as well even under high electrical noise.
+\end{abstract}	
+		
+
+\newpage
+
+
+\section{Introduction}
+
+
+% 1) Main objectives
+
+%Our resistivimeter work by 
+
+%The synchronous detection method due to it's wide use in amplification and recovery of signals more than two orders smaller than surrounding noise, this allow to greatly reduced the input power of the system. In order to achieve a signal with minimal distortion while keeping the low cost of development and maintenance. 
+
+% 2-a) What problems are the authors trying to solve?
+% 2-b) Why is it important?
+% 4) What techniques or tools do the author offer to solve the problems?
+% 5)Are there any theoretical problems, practical difficulties, overlooked influences of evolving technology?
+
+% 3) What are they not trying to solve?
+% 6) What are the main contributions of the paper?
+
+
+
+%Urban areas are characterized as noise areas to geoelectrical methods due to the electrical noise from power supply, grounding and stray voltages. Intrusive methods are affected by pavimentation and buildings with restrain the superficial area making them more susceptible to noise.
+%We design and build a resistivimeter 
+%The transmitter generate a senoidal wave which is sent directly to the receiver while is also sent across the earth to the receiver. Inside the receiver the signals are multiplied together and then filtered by a low-pass filter.
+
+
+In our work we design the transmitter and receiver, both which has two channels. The reference channel is fed directly in the receiver while the signal channel is injected from the transmitter into the subsurface and then to the receiver. The ideal lock-in transmitter would have a infinite frequency sweep without any distortion and would delivery constant power of 100 Watts for all frequencies. Ours transmitter deliver a stable power close to 60 Watts for the frequency band of 13 to 120 Hz with minimal distortion. Bellow 13 Hz the electrical sin wave distortion increase drastically with frequency.
+
+Inside the receiver the two input signals are multiplied together and then filtered by a low-pass filter of frequency no greater than the input wave, the resulting DC voltage will be proportional only to the resistivity if the two inputs are in phase, and only to the imaginary resistivity %electric permittivity
+ if they are in quadrature. Where the last is related to polarization effects.
+
+% Figura sistema
+% transfer function do equipamento
+
+
+
+\section{Sincronous Detection}
+
+The synchronous detection also known as Lock-in uses two signals, this method is sensitive to the difference of frequency and phase between the reference input for that reason it can track signals with the same characteristics of the reference channel attenuating any others. 
+
+% synchronous detection baixa deriva termica, experimento durou horas
+
+
+\section{Examples (Optional)}
+
+This is the first sentence of the example section.
+
+\section{Results}
+
+
+\begin{table}[h!]
+\centering
+\caption{Measured voltage on scaled models with three levels of white noise.}
+\label{t:scaled_models}
+\begin{tabular}{cccl|ccc}
+\multirow{2}{*}{\textbf{Noise level (\%)}}  & \multicolumn{2}{c}{\textbf{Output}}     &  & \textbf{Noise Level (\%)} & \multicolumn{2}{c}{\textbf{Output}}     \\
+                         & \textbf{In Phase}  & \textbf{Quadrature} &  &  	 				& \textbf{In Phase} & \textbf{Quadrature} 	\\
+\multirow{4}{*}{0}	 		& 1.52              & 8.45                &  & 	\multirow{4}{*}{0}	&  5.24				&		1.80			\\
+					 		& 1.60              & 8.50                &  &						&  4.75				&		1.90			\\
+					 		& 1.44              & 8.46                &  &						&  4.80				&		1.92			\\
+					 		& 1.48              & 8.40                &  &						&  5.30		    	&		1.81	 
+                                         \\ \hline                                   
+\multirow{4}{*}{40}	 		& 1.06              & 8.42                &  & 	\multirow{4}{*}{11}	&	4.70			&		1.32			\\
+					 		& 1.28              & 8.41                &  &						&	4.60			&		1.20			\\
+					 		& 1.29              & 8.37                &  &						&	4.68			&		1.26			\\
+					 		& 1.30              & 8.45                &  &						&	4.50			&		1.28			  
+                                         \\ \hline
+\multirow{4}{*}{67}	 		& 1.29              & 8.48                &  & 	\multirow{4}{*}{27}	&	2.30			&		1.30			\\
+					 		& 1.28              & 8.48                &  &						&	2.05			&		1.20			\\
+					 		& 1.29              & 8.48                &  &						&	2.12			&		1.24			\\
+					 		& 1.30              & 8.50                &  &						&	2.50			&		1.32			  
+                                          \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[]
+\centering
+\caption{Sampling effect on the inversion of Cole-Cole parameters}
+\label{my-label}
+\begin{tabular}{@{}|c|c|c|c|c|c|c|c|@{}}
+\multicolumn{3}{|c|}{\textbf{Sinthetic Model}}                             & \multirow{2}{*}{\textbf{Sampling}} & \multicolumn{3}{c|}{\textbf{Calculated Model}}                          & \multirow{2}{*}{\textbf{Missfit}}    \\
+\textbf{Model}     & \textbf{$\tau$}          & \textbf{$e_{cc}$}          &                                    & \textbf{$\tau$} & \textbf{$e_{cc}$} & \textbf{$\tau$ deviation}         &                                      \\ \hline
+\multirow{4}{*}{A} & \multirow{4}{*}{567.243} & \multirow{4}{*}{0.0452261} & 2                                  & 517.092         & 0.045(1)          & 113 \textless$\tau$\textless 1702 & 0.02                                 \\
+                   &                          &                            & 4                                  & 474.313         & 0.045(1)          & 454 \textless$\tau$\textless 1702 & 0.01                                 \\
+                   &                          &                            & 8                                  & 567.243         & 0.0452261         & 568 \textless$\tau$\textless 850  & 0.02                                 \\
+                   &                          &                            & 16                                 & 517.092         & 0.045(1)          & 453 \textless$\tau$\textless 568  & 0.03                                 \\ \hline
+\multirow{4}{*}{B} & \multirow{4}{*}{2.89942} & \multirow{4}{*}{0.0452261} & 2                                  & 2.89942         & 0.045(1)          & 0.5 \textless$\tau$\textless 2.9  & 0.007                                \\
+                   &                          &                            & 4                                  & 2.89942         & 0.045(1)          & 0.5 \textless$\tau$\textless 2.9  & 0.013                                \\
+                   &                          &                            & 8                                  & 2.89942         & 0.045(1)          & 1.5 \textless$\tau$\textless 11.6 & 0.015                                \\
+                   &                          &                            & 16                                 & 2.89942         & 0.0452261         & 2.3 \textless$\tau$\textless 2.9  & \textless $10^{-5}$                  \\ \hline
+\multirow{4}{*}{C} & \multirow{4}{*}{622.257} & \multirow{4}{*}{0.834171}  & 2                                  & 622.257         & 0.834171          & 622.257                           & \multirow{4}{*}{\textless $10^{-5}$} \\
+                   &                          &                            & 4                                  & 622.257         & 0.834171          & 622.257                           &                                      \\
+                   &                          &                            & 8                                  & 622.257         & 0.834171          & 622.257                           &                                      \\
+                   &                          &                            & 16                                 & 622.257         & 0.834171          & 622.257                           &                                   \\  \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[]
+\centering
+\caption{Noise effect on the inversion of Cole-Cole parameters}
+\label{my-label}
+\begin{tabular}{@{}|c|c|c|c|c|c|c|@{}}
+\multicolumn{3}{|c|}{\textbf{Sinthetic Model}}                             & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Noise\\ (\%)\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Calculated Model}}                            \\
+\textbf{Model}     & \textbf{$\tau$}          & \textbf{$e_{cc}$}          &                                                                                & \textbf{$\tau$} & \textbf{$e_{cc}$} & \textbf{$\tau$ deviation}           \\  \hline
+\multirow{4}{*}{A} & \multirow{4}{*}{567.243} & \multirow{4}{*}{0.0452261} & 5                                                                              & 567.243         & 0.0452261         & 567 \textless$\tau$\textless 860    \\
+                   &                          &                            & 10                                                                             & 517.092         & 0.0452(5)         & 113 \textless$\tau$\textless 3405   \\
+                   &                          &                            & 25                                                                             & 517.092         & 0.045(1)          & 56 \textless$\tau$\textless 5670    \\
+                   &                          &                            & 250                                                                            & 517.092         & 0.045(2)          & 170 \textless$\tau$\textless 11344  \\ \hline
+\multirow{4}{*}{B} & \multirow{4}{*}{2.89942} & \multirow{4}{*}{0.0452261} & 5                                                                              & 2.89942         & 0.0452(5)         & 1.15 \textless$\tau$\textless 11.6  \\
+                   &                          &                            & 10                                                                             & 2.89942         & 0.045(1)          & 2.3 \textless$\tau$\textless 4.4    \\
+                   &                          &                            & 25                                                                             & 2.89942         & 0.045(5)          & 1.8 \textless$\tau$\textless 5.8    \\
+                   &                          &                            & 250                                                                            & 2.89942         & 0.04(1)           & 1.8 \textless$\tau$\textless 14500  \\ \hline
+\multirow{4}{*}{C} & \multirow{4}{*}{622.257} & \multirow{4}{*}{0.834171}  & 5                                                                              & 622.257         & 0.834171          & 622.257                             \\
+                   &                          &                            & 10                                                                             & 622.257         & 0.834171          & 622.257                             \\
+                   &                          &                            & 25                                                                             &                 &                   &                                     \\
+                   &                          &                            & 250                                                                            & 622.257         & 0.8(1)            & 435 \textless $\tau $\textless 1245
+\end{tabular}
+\end{table}
+
+
+
+\section{Conclusions}
+
+In relation to others instruments in use, our low power resistivimeter is able to reject great amount of noise in scaled models, returning stable measures with levels of white noise of $67 \%$ in RC circuit and $11 \%$ in clay scaled model. This results strongly support the viabilty of such low cost device in geoelectrical measures, even in noise environments.
+
+The inversion of Cole-Cole parameters: relaxation time and Cole-Cole expoent points towards application as a multifrequency resistivimeter for Spectral Induced Polarization with a bandwith of $13$ to $120$ Hertz. In this specter $8$ points evenly distributed were enough to recover the Cole-Cole parameters.
+
+
+
+%A  intensa rejei\c{c}\~ao de ru\'idos pelo m\'etodo de detec\c{c}\~ao s\'incrona permite a manufatura de eletrorresistiv\'imetros com baixo custo de mercado e baixa pot\^encia de opera\c{c}\~ao se comparado a outros equipamentos em uso no mercado. 
+		
+%		Este tipo de eletrorresistiv\'imetro apresentou estabilidade para at\'e $11\%$ de ru\'ido branco para as medidas da argila no modelo em escala reduzida. Este nivel de ru\'ido representa uma situa\c{c}\~ao muito desfavor\'avel para a aquisi\c{c}\~ao geoel\'etrica, mostrando que o desempenho do equipamento \'e suficientemente confi\'avel para sua aplica\c{c}\~ao em ambientes ruidosos.
+		
+%		Dada a possibilidade de aquisi\c{c}\~ao com v\'arias frequ\^encias, foi analisado o potencial da aplica\c{c}\~ao do eletrorresisitiv\'imetro na medida de polariza\c{c}\~ao ind\'uzida espectral. Os resultados obtidos pela invers\~ao dos par\^ametro de Cole-Cole, sugerem que a faixa de $13$ a $110$ Hertz \'e suficiente para a recupera\c{c}\~ao dos par\^ametros do modelo.
+		
+%		De maneira a aperfei\c{c}oar o equipamento para uso em campo, \'e sugerido a digitaliza\c{c}\~ao da sa\'ida, desta forma a fase poderia ser medida diretamente no equipamento eliminando a etapa de calibra\c{c}\~ao. Esta medida tamb\'em que os dados sejam salvos no equipamento, acelerando o seu processamento. 
+\section{Acknowledgements (Optional)}
+
+This is the first sentence of the acknowledgements.
+
+% \begin{thebibliography}{6pt}
+%   \bibitem[{<reference>}]{<cite>} ...
+% \end{thebibliography}
+%
+% or
+%
+% \bibliography{...}
+
+\end{document} 
