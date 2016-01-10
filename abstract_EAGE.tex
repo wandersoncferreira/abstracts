@@ -144,11 +144,20 @@ for these frequencies.
 \end{equation}
 
 
-To study this application we made a inversion of Cole-Cole parameters using the frequencies
-at range of our resistivimeter only. The inverted parameters were the relaxation time and exponent
-from equation \ref{e:CC}. In the equation $\sigma_{e}$ is the complex conductivity, $\sigma_{0}$ is the
-conductivity at zero frequency, $m$ is the chargeability, $\omega$ is the angular frequency, $\tau$ is the relaxation time
-and $c$ is the Cole-Cole exponent.
+An inversion scheme of the Cole-Cole parameters was used to verify how
+many frequency samples from the 13 to 120Hz range is necessary to
+re-build the Cole-Cole curve. The partial sweep scheme was implemented
+wich consists of choosing specific values for the relaxation time
+($\tau$) and for the Cole-Cole exponent ($c$) inside a prior
+established interval and finally computing a \textit{l2-norm} between
+each modeled curve and the data. In the last step, it's built an image
+of the solution space which is analized to look for the minima
+positions.  Using equation \ref{e:CC} we define $\tau \in [0:1]$ and
+$c \in [10^{-4}:1]$ based on physical meaningful results for each
+parameter. It is important to highlight that we could have more than
+one relaxation time in the data, however to simplify our analysis only
+one relaxation time (with possible values inside the prior defined
+range) is used for each Cole-Cole curve.
 
 \begin{equation}
 	\sigma_{e} = \sigma_{0}
@@ -161,9 +170,12 @@ and $c$ is the Cole-Cole exponent.
 	\label{e:CC}
 \end{equation}
 
-The case in analysis were for one relaxation time only. It was tested for four values of Gaussian noise and 
-for four different frequency sampling at $5\%$ of noise.
+where $\sigma_{e}$ is the complex conductivity, $\sigma_{0}$ is the
+conductivity at zero frequency, $m$ is the chargeability, $\omega$ is the angular frequency, $\tau$ is the relaxation time and $c$ is the Cole-Cole exponent.
 
+%The case in analysis were for one relaxation time only. It was tested for four values of Gaussian noise and 
+%for four different frequency sampling at $5\%$ of noise.
+% Acho que isso tudo ai acima deve ir nos resultados.
 
 \section{Results}
 
