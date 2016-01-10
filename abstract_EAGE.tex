@@ -99,25 +99,31 @@ to the difference of frequency and phase between the two inputs
 \att{PRECISA DE UMA REFERENCIA AQUI}, reaching a peak when the
 correlation in the frequency domain is maximum. For this reason it can
 track signals with the same characteristics of the reference channel
-even under intense noise since the noise doesn't have a correlated
+even under intense noise since it doesn't have a correlated
 phase \att{REFERENCIA}. Inside the receiver, the reference channel is
 convert to a unitary square wave then is multiplied by the demodulated
 signal as showed in the complete scheme in Figure \ref{f:Lock-in}. The
 resulting DC voltage on the display is the output of the low-pass
-filter of frequency no greater than the input wave as the equation
-(\att{Adiciona a qeuacao}) describes 
+filter of cut frequency no greater than second harmonic of the input wave
+ as the equation \ref{e:H(w)} describes.
+
+\begin{equation}
+	v_{p(t)} = V_{S}V_{R}\lbrace \cos( 2\omega_{R} t + [\phi_{R} + \phi_{S}] )
+					     				+ \cos( \Delta\phi_{RS})  
+					     \rbrace
+	\label{e:H(w)}
+\end{equation}
   
-Therefore, analizing the equation (\att{equacao acima}) we note two
+Therefore, analizing the equation \ref{e:H(w)} we note two
 special cases; (1) the output will be proportional only to the
 resistivity if the two inputs are in phase; (2) the output will be
 proportional only to the imaginary resistivity if they are in
-quadrature which is related to polarization effects.
+quadrature which is related to polarization effects. % Isso com certeza vai precisar de referencia
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[keepaspectratio=true,scale=0.3]{Sistema-Inside_Lock_In}
-	\caption{Scheme of synchronous detection. The arrows show the way followed by the source signal from the transmitter injected into the receiver reference channel (\textit{Up}) and signal channel (\textit{down}). In the reference channel $1^{,}$ is a optional attenuater%o que atenua. Não sei se essa palavra existe
-	 . In the reference channel $1$ is a phase-shifter for correcting the added phase from the detector, $2$ output a square wave from the sine wave input, $3$ is the multiplier and  $4$ the low-pass filter led to the display. }
+	\caption{Scheme of synchronous detection. The arrows show the way followed by the source signal from the transmitter injected into the receiver reference channel (\textit{Up}) and signal channel (\textit{down}). In the reference channel $1^{,}$ is a optional attenuator. In the reference channel $1$ is a phase-shifter for correcting the added phase from the detector, $2$ output a square wave from the sine wave input, $3$ is the multiplier and  $4$ the low-pass filter led to the display. }
 	\label{f:Lock-in}
 \end{figure}
 %imaginary resistivity pode ser electric permittivity, NÃO REMOVA ESSE PERCENT!
@@ -130,9 +136,6 @@ quadrature which is related to polarization effects.
 
 % synchronous detection baixa deriva termica, experimento
 % durou horas
-\section{Scaled Models}
-
-
 \section{Inversion}
 
 As mentioned before, due to pratical limitations our resistivimeter frequency range from $13$ to $120$Hz.
