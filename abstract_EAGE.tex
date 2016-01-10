@@ -30,7 +30,7 @@
 \hypersetup{pdftitle={Development of lock-in resistivimeter
 for measuring resistivity and induced polarization under
 high electrical noise}}
-\hypersetup{pdfauthor={J.~M.~Oliveira and F.~Hiodo}}
+\hypersetup{pdfauthor={J.~M.~Oliveira, W.~C.~Ferreira and F.~Hiodo}}
 % For making a print without color links
 \hypersetup{linkcolor=black,citecolor=black,filecolor=black,urlcolor=black}
 \hypersetup{linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
@@ -39,7 +39,7 @@ high electrical noise}}
 
 \title{Development of lock-in resistivimeter for measuring
 resistivity and induced polarization under high electrical noise}
-\author{J.~M.~Oliveira and F.~Hiodo}
+\author{J.~M.~Oliveira, W.~C.~Ferreira and F.~Hiodo}
 \maketitle
 
 % Nota: geralmente a EAGE limita o numero de caracteres no abstract. 
@@ -58,7 +58,7 @@ resistivity and induced polarization under high electrical noise}
 	exponent and relaxation time, in other words, which are the minimum
 	number of frequency samples that is necessary to reconstruct the
 	Cole-Cole curve. An inversion scheme based on the partial sweep of
-	the solution space was implemented in OCTAVE. We found that $8$
+	the solution space was implemented. We found that $8$
 	frequency samples evenly spaced are enough to recover the relaxation
 	time with variations below one order of magnitude. Therefore, the
 	results showed good performance for the developed lock-in
@@ -137,7 +137,6 @@ quadrature which is related to polarization effects. % Isso com certeza vai prec
 % synchronous detection baixa deriva termica, experimento
 % durou horas
 \section{Inversion}
-
 As mentioned before, due to pratical limitations our resistivimeter frequency range from $13$ to $120$Hz.
 While a conventional chargeability survey uses much lower frequencies, sample measurements uses higher % Como resultado a cargabilidade não bate, mas tudo bem, isso nao precisa falar... =D
 so is reasonable to assume the validity of it's frequency band for application of equation \ref{e:FE}. However
@@ -151,11 +150,20 @@ for these frequencies.
 \end{equation}
 
 
-To study this application we made a inversion of Cole-Cole parameters using the frequencies
-at range of our resistivimeter only. The inverted parameters were the relaxation time and exponent
-from equation \ref{e:CC}. In the equation $\sigma_{e}$ is the complex conductivity, $\sigma_{0}$ is the
-conductivity at zero frequency, $m$ is the chargeability, $\omega$ is the angular frequency, $\tau$ is the relaxation time
-and $c$ is the Cole-Cole exponent.
+An inversion scheme of the Cole-Cole parameters was used to verify how
+many frequency samples from the 13 to 120Hz range is necessary to
+re-build the Cole-Cole curve. The partial sweep scheme was implemented
+wich consists of choosing specific values for the relaxation time
+($\tau$) and for the Cole-Cole exponent ($c$) inside a prior
+established interval and finally computing a \textit{l2-norm} between
+each modeled curve and the data. In the last step, it's built an image
+of the solution space which is analized to look for the minima
+positions.  Using equation \ref{e:CC} we define $\tau \in [0:1]$ and
+$c \in [10^{-4}:1]$ based on physical meaningful values for each
+parameter. It is important to highlight that we could have more than
+one relaxation time in the data, however to simplify our analysis only
+one relaxation time (with possible values inside the prior defined
+range) is used for each Cole-Cole curve.
 
 \begin{equation}
 	\sigma_{e} = \sigma_{0}
@@ -168,12 +176,11 @@ and $c$ is the Cole-Cole exponent.
 	\label{e:CC}
 \end{equation}
 
-The case in analysis were for one relaxation time only. It was tested for four values of Gaussian noise and 
-for four different frequency sampling at $5\%$ of noise.
-
+where $\sigma_{e}$ is the complex conductivity, $\sigma_{0}$ is the
+conductivity at zero frequency, $m$ is the chargeability, $\omega$ is the angular frequency, $\tau$ is the relaxation time and $c$ is the Cole-Cole exponent.
 
 \section{Results}
-
+It was tested for four values of Gaussian noise and for four different frequency sampling at $5\%$ of noise.
 
 \begin{table}[h!]
 \centering
@@ -251,9 +258,17 @@ for four different frequency sampling at $5\%$ of noise.
 
 \section{Conclusions}
 
-In relation to others instruments in use, our low power resistivimeter is able to reject great amount of noise in scaled models, returning stable measures with levels of white noise of $67 \%$ in RC circuit and $11 \%$ in clay scaled model. This results strongly support the viabilty of such low cost device in geoelectrical measures, even in noise environments.
-
-The inversion of Cole-Cole parameters: relaxation time and Cole-Cole expoent points towards application as a multifrequency resistivimeter for Spectral Induced Polarization with a bandwith of $13$ to $120$ Hertz. In this specter $8$ points evenly distributed were enough to recover the Cole-Cole parameters.
+Compared to others instruments in use today, the low power
+resistivimeter was able to reject great amount of noise in scaled
+models. The results show stable measurements up to $67\%$ of white
+noise in RC circuit and $11 \%$ in the clay experiment. These results
+strongly support the viabilty of such low cost device in geoelectrical
+surveys even in high noise environments. The inversion study for the
+Cole-Cole parameters points towards the viability of the equipment in
+others applications such as the multifrequency resistivimeter for
+Spectral Induced Polarization with a bandwith of $13$ to $120$Hz. We
+showed that $8$ frequency samples evenly distributed were enough to
+recover the Cole-Cole parameters.
 
 
 
