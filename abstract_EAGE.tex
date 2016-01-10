@@ -60,7 +60,7 @@ Cole-Cole exponent and relaxation time, in other words,
 which are the minimum number of frequency
 samples that is necessary to reconstruct the Cole-Cole curve.  
 
-A inversion scheme based on the partial sweep of the
+An inversion scheme based on the partial sweep of the
 solution space was implemented in OCTAVE. We found that $8$
 frequency samples evenly spaced are enough to recover the relaxation time
 with variations below one order of magnitude. Therefore, the
@@ -130,14 +130,31 @@ logarithmic nature of frequency.
 
 %% Usar um esquema aqui para explicar o que tem abaixo. Vale
 %a pena.
-Inside the receiver the two input signals are multiplied
-together and then filtered by a low-pass filter of frequency
-no greater than the input wave, the resulting DC voltage
-will be proportional only to the resistivity if the two
-inputs are in phase, and only to the imaginary resistivity
- if they are in quadrature. Where the
+
+\section{Sincronous Detection}
+
+The synchronous detection also known as lock-in is 
+sensitive to the difference of frequency and phase between
+the two inputs, reaching a peak when the correlation in the frequency domain
+is maximum. For that reason it can track signals with
+the same characteristics of the reference channel
+even under intense noise since the noise doesn't have a correlated phase. 
+
+
+Inside the receiver, the reference channel is convert to a unitary square wave %
+then is multiplied by the demodulated signal as showed in figure \ref{f:Lock-in}. %na verdade a figura mostra o processo nteiro mais aí não sei como escrever
+The resulting DC voltage on the display is the output of the low-pass filter of frequency
+no greater than the input wave. It will be proportional only to the resistivity if the two
+inputs are in phase, and will be proportional only to the imaginary resistivity if they are in quadrature. Where the
 last is related to polarization effects.
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[keepaspectratio=true,scale=0.3]{Sistema-Inside_Lock_In}
+	\caption{Scheme of synchronous detection. The arrows show the way followed by the source signal from the transmitter injected into the receiver reference channel (\textit{Up}) and signal channel (\textit{down}). In the reference channel $1^{,}$ is a optional attenuater%o que atenua. Não sei se essa palavra existe
+	 . In the reference channel $1$ is a phase-shifter for correcting the added phase from the detector, $2$ output a square wave from the sine wave input, $3$ is the multiplier and  $4$ the low-pass filter led to the display. }
+	\label{f:Lock-in}
+\end{figure}
 %imaginary resistivity pode ser electric permittivity, NÃO REMOVA ESSE PERCENT!
 
 % Figura sistema
@@ -145,23 +162,47 @@ last is related to polarization effects.
 
 
 
-\section{Sincronous Detection}
-
-The synchronous detection also known as lock-in uses two
-signals "USA DOIS SINAIS PARA QUE?", this method is
-sensitive to the difference of frequency and phase between
-the two inputs. For that reason it can track signals with
-the same characteristics of the reference channel
-attenuating any others whose frequency or phase differ from
-it. 
 
 % synchronous detection baixa deriva termica, experimento
 % durou horas
+\section{Scaled Models}
 
 
-\section{Examples (Optional)}
+\section{Inversion}
 
-This is the first sentence of the example section.
+As mentioned before, due to pratical limitations our resistivimeter frequency range from $13$ to $120$Hz.
+While a conventional chargeability survey uses much lower frequencies, sample measurements uses higher % Como resultado a cargabilidade não bate, mas tudo bem, isso nao precisa falar... =D
+so is reasonable to assume the validity of it's frequency band for application of equation \ref{e:FE}. However
+find the relaxation time dor SIP survey could be %comprometido, incapacitado, algo assim
+for these frequencies.
+
+
+\begin{equation}
+	F_{e} = \frac{ |V_{(\omega_{1})} - V_{(\omega_{2})}| }{V_{(\omega_{1})}}
+	\label{e:FE}
+\end{equation}
+
+
+To study this application we made a inversion of Cole-Cole parameters using the frequencies
+at range of our resistivimeter only. The inverted parameters were the relaxation time and exponent
+from equation \ref{e:CC}. In the equation $\sigma_{e}$ is the complex conductivity, $\sigma_{0}$ is the
+conductivity at zero frequency, $m$ is the chargeability, $\omega$ is the angular frequency, $\tau$ is the relaxation time
+and $c$ is the Cole-Cole exponent.
+
+\begin{equation}
+	\sigma_{e} = \sigma_{0}
+			\left[
+			1 + \frac{m}{1-m}
+						\left( 
+								1 - \frac{1}{1+ \left( j\omega\tau \right)^{c} }	
+						\right) 			
+			\right]
+	\label{e:CC}
+\end{equation}
+
+The case in analysis were for one relaxation time only. It was tested for four values of Gaussian noise and 
+for four different frequency sampling at $5\%$ of noise.
+
 
 \section{Results}
 
@@ -192,7 +233,7 @@ This is the first sentence of the example section.
 \end{table}
 
 
-\begin{table}[]
+\begin{table}[h!]
 \centering
 \caption{Sampling effect on the inversion of Cole-Cole parameters}
 \label{my-label}
@@ -216,7 +257,7 @@ This is the first sentence of the example section.
 
 
 
-\begin{table}[]
+\begin{table}[h!]
 \centering
 \caption{Noise effect on the inversion of Cole-Cole parameters}
 \label{my-label}
