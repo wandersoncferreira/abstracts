@@ -5,7 +5,7 @@ BUILDTEX=$(TEX) $(PROJECT).tex
 
 all:
 		$(BUILDTEX)
-#		$(BIBTEX) $(PROJECT)  comenta essa linha se nenhum arquivo bibliografico for usado no $(PROJECT)
+		$(BIBTEX) $(PROJECT)  
 		$(BUILDTEX)
 		$(BUILDTEX)
 #		spdf.py $(PROJECT).pdf 1   Explico essas linhas depois... elas são especificas para o abstract da EAGE. Comando para separar a capa do resto do Abstract
