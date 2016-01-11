@@ -39,7 +39,7 @@ high electrical noise}}
 
 \title{Development of lock-in resistivimeter for measuring
 resistivity and induced polarization under high electrical noise}
-\author{J.~M.~Oliveira, W.~C.~Ferreira and F.~Hiodo}
+\author{J.~M.~Oliveira, F.~Hiodo and W.~C.~Ferreira}
 \maketitle
 
 % Nota: geralmente a EAGE limita o numero de caracteres no abstract. 
@@ -53,7 +53,8 @@ resistivity and induced polarization under high electrical noise}
 	white noise in the respective models. The equipment was made with
 	low cost components and yet capable of providing a frequency sweep
 	from $13$ to $120$Hz to the transmitter which allows better signal
-	sampling. This frequency bandwidth was used to find the less time
+	sampling. The vality of it's frequency bandwidth for application in Spectral Induced Polarization (SIP) were 
+	also studied using the Cole-Cole equation. This model was used to find the less time
 	consuming operational settings able to recover the Cole-Cole
 	exponent and relaxation time, in other words, which are the minimum
 	number of frequency samples that is necessary to reconstruct the
@@ -94,52 +95,45 @@ distortion increases drastically and above the 120Hz there is little
 gain of information due to logarithmic nature of frequency.
 
 \section{Sincronous Detection}
-The synchronous detection also known as \textit{lock-in} is sensitive
-to the difference of frequency and phase between the two inputs
-as showed by \citet{meade13}. The voltage reach it's peak when the
-correlation in the frequency domain is maximum therefore it can
-track signals with the same characteristics of the reference channel
-even under intense noise since the noise doesn't have a correlated
-phase with the reference. Inside the receiver, the reference channel is
-convert to a unitary square wave then is multiplied by the demodulated
-signal as showed in the complete scheme in Figure \ref{f:Lock-in}. The
-resulting DC voltage on the display is the output of the low-pass
-filter of cut off frequency no greater than $\omega_{R}$ 
- as the equation \ref{e:H(w)} describes. % tá esquisito esse paragrafo, mutas ideais misturadas... mas não to conseguindo junta as ideias pra corrigir ele
+As showed by \citet{meade13} the synchronous detection also known as \textit{lock-in} is sensitive
+to the difference of frequency and phase between the two inputs. 
+Inside the receiver, the reference channel is converted to a unitary square wave 
+as a mean to multiply the demodulated signal of interest. As shown in the complete scheme 
+of Figure \ref{f:Lock-in}, after that the product is injected into a low-pass filter. Setting 
+the cut off frequency of the low-pass filter to a value no greater than the reference 
+frequency the output in the scheme of Figure \ref{f:Lock-in} will be a DC voltage described 
+by equation \ref{e:v_out}.
 
 \begin{equation}
-	v_{p(t)} = V_{S}V_{R}\lbrace
-								\cos \left[ 
-											\left( \omega_{R} + \omega_{S} \right)t + (\phi_{R} + \phi_{S})
-									 \right]
-									+ 
-								\cos \left[ 
-											\left( \omega_{R} - \omega_{S} \right)t + (\phi_{R} - \phi_{S})
-									 \right]
-					     \rbrace
-	\label{e:H(w)}
+	v_{(t)} = H_{(\omega)} V_{S} 
+									\cos \left(
+												\phi_{R} - \phi_{S}
+										 \right)
+						+
+				H_{(\omega)} {\langle n_{(t)} \rangle}_{\lambda}
+	\label{e:v_out}
 \end{equation}
 
-where $V_{S}$, $\phi_{S}$ and $\omega_{S}$ are the respectively amplitude, phase and angular frequency 
-of the measured signal wave and $V_{R}$, $\phi_{R}$ and $\omega_{R}$ are the respectively amplitude, 
-phase and angular frequency of the reference wave.
+where $H_{(\omega)}$ is an transfer function of the low-pass filter, $V_{S}$ and $\phi_{S}$ are the amplitude and phase
+of the signal wave, $\phi_{R}$ is the phase of the square wave of reference and unitary amplitude and ${\langle n_{(t)} \rangle}_{\lambda}$
+is the noise averaged over the time of the measurement $\lambda$. 
 
+% Se puder falar do filtro usado ia ser muito bom. 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[keepaspectratio=true,scale=0.3]{Sistema-Inside_Lock_In}
-	\caption{Scheme of synchronous detection. The arrows show the way followed by the source signal from the transmitter injected into the receiver reference channel (\textit{Up}) and signal channel (\textit{down}). In the reference channel $1^{,}$ is a optional amplifier or attenuator. In the reference channel $1$ is a phase-shifter for correcting the added phase from the detector, $2$ output a square wave from the sine wave input, $3$ is the multiplier and  $4$ the low-pass filter led to the display. }
+	\caption{Scheme of synchronous detection. The arrows show the way followed by the source signal from the transmitter injected into the receiver reference channel (\textit{up}) and signal channel (\textit{down}). In the signal channel $1^{,}$ there is a optional amplifier or attenuator. In the reference channel $1$ is a phase-shifter for correcting the added phase from the detector, $2$ output a square wave from the sine wave input, $3$ is the multiplier and  $4$ the low-pass filter led to the display. }
 	\label{f:Lock-in}
 \end{figure}
 
 
-Therefore, analizing the equation \ref{e:H(w)} we note two
-special cases; (1) the output will be proportional only to the
-resistivity if the two inputs are in phase; (2) the output will be
-proportional only to the imaginary resistivity if they are in
-quadrature which is related to polarization effects.  % Achei uma boa referencia nos papers do TG
-%imaginary resistivity pode ser electric permittivity, NÃO REMOVA ESSE PERCENT!
+The mainly advantage from lock-in resistivimeters over DC ones can be seen in equation \ref{e:v_out}. It attenuate noises as the white noise whose phase doesn't correlate with the reference since it's average over time approach zero. From which the Johnson-Nyquist is perhaps the more significant since it increase in amplitude with the spacing of the geoelectrical array as shown by \citet{alfano82}. With a narrow band filter it can filter almost all interferences including these from electric power supplies, in our multifrequency resistivimeter it can also be achieved samplig data in another frequency.
 
+
+There is two possible configuration for taking measurements: (1) Setting $\phi_{R}$ in-phase with $\phi_{S}$ and (2) Setting $\phi_{R}$ in quadrature with $\phi_{S}$. In configuration (1) the resistivimeter is sensible only to amplitude $V_{S}$
+while in (2) it work linearly with changes in phase $\phi_{S}$ until ${\pi}/{6}$ rad. Both measurements can be used to extract information of
+capacitive and resistive properties as discussed by \citet{tarasov13},\citet{edmundo14} and \citet{weller96}.
 
 \section{Inversion}
 As mentioned before, due to practical limitations our resistivimeter frequencies 
@@ -151,9 +145,8 @@ it consists of choosing specific values for the relaxation time
 established interval and then computing a \textit{l2-norm} between
 each modelled curve and the data. In the last step, it's built an map
 of the solution space which is analized to look for the minima
-positions.  Using equation \ref{e:CC} we define $c \in [0:1]$ and
-$\tau \in [10^{-4}:10^{4}]$ based on physical meaningful values for each
-parameter \att{REFERENCIA}
+positions.  Using equation \ref{e:CC} , defined by \citet{tarasov13} we define $c \in [0:1]$ and
+$\tau \in [10^{-4}:10^{4}]$ based on empirical values for relaxation time \citet{telford90}
 . It is important to highlight that we could have more than
 one relaxation time in the data, however to simplify our analysis only
 one relaxation time (with possible values inside the prior defined
@@ -225,8 +218,7 @@ a clay tank of $1125$ cm$^3$, also points to application even under $11\%$ of wh
 \end{tabular}
 \end{table}
 
-As for the Cole-Cole paramenters, the effect of noise and of sample interval were tested for three models using four values of Gaussian noise and for four different frequency sampling at $5\%$ of Gaussian noise respectively. These three models do not felt inside the frequency band of the resistivimeter as result the characteristic Cole-Cole curve can't be observed instead the measured data approach an straight line. Surprisingly the exponent of Cole-Cole, whose indicate a dependence of complex conductivity with frequency \att{REFERENCIA} was very well determinated in all cases, 
-even under $250\%$ of noise.
+As for the Cole-Cole paramenters, the effect of noise and of sample interval were tested for three models using four values of Gaussian noise and for four different frequency sampling at $5\%$ of Gaussian noise respectively. These three models do not felt inside the frequency band of the resistivimeter as result the characteristic Cole-Cole curve can't be observed instead the measured data approach an straight line. Surprisingly the exponent of Cole-Cole  was very well determinated in all cases, even under $250\%$ of noise, despite relating a dependence of complex conductivity with frequency as showed in the original work of \citet{cole41}.
 
 In other hand the relaxation time is strongly affected by noise. In table \ref{t:INV-noise_effect} we can see that it's precision vary with the 
 percent of noise while it's accuracy stay roughly the same with the exception of the most extreme case of $250\%$ of noise. Nonetheless the best 
@@ -255,7 +247,7 @@ results of all models recover both parameters within $10\%$ of uncertainty suppo
 \end{table}
 
 The number of samples needed in a survey also were studied with $5\%$ of noise, considered a bad %adverse?
-field situation \att{REFERENCIA}. As showed in table \ref{t:INV-sample_effect} with $16$ samples evenly distributed the relaxation 
+field situation \citet{sandor11}. As showed in table \ref{t:INV-sample_effect} with $16$ samples evenly distributed the relaxation 
 time was within the same order of magnitude of the synthetic model. Despite being less precise, $8$ frequency samples also had similar uncertainty therefore being an viable option as well.
 
 \begin{table}[H]
@@ -308,16 +300,5 @@ recover the Cole-Cole parameters.
 
 \bibliography{abstract_EAGE}
 
-\section{Acknowledgements (Optional)}
-
-This is the first sentence of the acknowledgements.
-
-% \begin{thebibliography}{6pt}
-%   \bibitem[{<reference>}]{<cite>} ...
-% \end{thebibliography}
-%
-% or
-%
-% \bibliography{...}
 
 \end{document} 
