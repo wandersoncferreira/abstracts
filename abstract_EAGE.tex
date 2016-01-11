@@ -58,7 +58,7 @@ resistivity and induced polarization under high electrical noise}
 	exponent and relaxation time, in other words, which are the minimum
 	number of frequency samples that is necessary to reconstruct the
 	Cole-Cole curve. An inversion scheme based on the partial sweep of
-	the solution space was implemented. We found that $8$
+	the solution space was implemented. We found that $16$
 	frequency samples evenly spaced are enough to recover the relaxation
 	time with variations below one order of magnitude. Therefore, the
 	results showed good performance for the developed lock-in
@@ -192,64 +192,15 @@ Cole-Cole exponent.
 %	F_{E} = \frac{ |V_{(\omega_{1})} - V_{(\omega_{2})}| }{V_{(\omega_{1})}}
 %	\label{e:FE}
 %\end{equation}
-It was tested for four values of Gaussian noise and for four different frequency sampling at $5\%$ of noise.
 
 
-
-\begin{table}[H]
-\centering
-\caption{Sampling effect on the inversion of Cole-Cole parameters}
-\label{t:INV-sample_effect}
-\begin{tabular}{@{}|c|c|c|c|c|c|c|c|@{}}
-\multicolumn{3}{|c|}{\textbf{Sinthetic Model}}                             & \multirow{2}{*}{\textbf{Sampling}} & \multicolumn{3}{c|}{\textbf{Calculated Model}}                          & \multirow{2}{*}{\textbf{Missfit}}    \\
-\textbf{Model}     & \textbf{$\tau$}          & \textbf{$e_{cc}$}          &                                    & \textbf{$\tau$} & \textbf{$e_{cc}$} & \textbf{$\tau$ deviation}         &                                      \\ \hline
-\multirow{4}{*}{A} & \multirow{4}{*}{567.243} & \multirow{4}{*}{0.0452261} & 2                                  & 517.092         & 0.045(1)          & 113 \textless$\tau$\textless 1702 & 0.02                                 \\
-                   &                          &                            & 4                                  & 474.313         & 0.045(1)          & 454 \textless$\tau$\textless 1702 & 0.01                                 \\
-                   &                          &                            & 8                                  & 567.243         & 0.0452261         & 568 \textless$\tau$\textless 850  & 0.02                                 \\
-                   &                          &                            & 16                                 & 517.092         & 0.045(1)          & 453 \textless$\tau$\textless 568  & 0.03                                 \\ \hline
-\multirow{4}{*}{B} & \multirow{4}{*}{2.89942} & \multirow{4}{*}{0.0452261} & 2                                  & 2.89942         & 0.045(1)          & 0.5 \textless$\tau$\textless 2.9  & 0.007                                \\
-                   &                          &                            & 4                                  & 2.89942         & 0.045(1)          & 0.5 \textless$\tau$\textless 2.9  & 0.013                                \\
-                   &                          &                            & 8                                  & 2.89942         & 0.045(1)          & 1.5 \textless$\tau$\textless 11.6 & 0.015                                \\
-                   &                          &                            & 16                                 & 2.89942         & 0.0452261         & 2.3 \textless$\tau$\textless 2.9  & \textless $10^{-5}$                  \\ \hline
-\multirow{4}{*}{C} & \multirow{4}{*}{622.257} & \multirow{4}{*}{0.834171}  & 2                                  & 622.257         & 0.834171          & 622.257                           & \multirow{4}{*}{\textless $10^{-5}$} \\
-                   &                          &                            & 4                                  & 622.257         & 0.834171          & 622.257                           &                                      \\
-                   &                          &                            & 8                                  & 622.257         & 0.834171          & 622.257                           &                                      \\
-                   &                          &                            & 16                                 & 622.257         & 0.834171          & 622.257                           &                                   \\  \hline
-\end{tabular}
-\end{table}
-
-
+To verify it's performance in noisy areas was conducted an experiment with scaled models where were
+tested how much it's measurements are affected by white noise. The results of table \ref{t:scaled_models} show
+a good performance even under $67\%$ in the RC circuit of $12 \mu$F. As result of such high capacitance, the in-phase 
+output was working as the quadrature and vise versa. The outcome of a model more close to data expected from field survey, 
+a clay tank of $1125$ cm$^3$, also points to application even under $11\%$ of white noise as showed in table \ref{t:scaled_models}.
 
 \begin{table}[H]
-\centering
-\caption{Noise effect on the inversion of Cole-Cole parameters}
-\label{t:INV-noise_effect}
-\begin{tabular}{@{}|c|c|c|c|c|c|c|@{}}
-\multicolumn{3}{|c|}{\textbf{Sinthetic Model}}                             & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Noise\\ (\%)\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Calculated Model}}                            \\
-\textbf{Model}     & \textbf{$\tau$}          & \textbf{$e_{cc}$}          &                                                                                & \textbf{$\tau$} & \textbf{$e_{cc}$} & \textbf{$\tau$ deviation}           \\  \hline
-\multirow{4}{*}{A} & \multirow{4}{*}{567.243} & \multirow{4}{*}{0.0452261} & 5                                                                              & 567.243         & 0.0452261         & 567 \textless$\tau$\textless 860    \\
-                   &                          &                            & 10                                                                             & 517.092         & 0.0452(5)         & 113 \textless$\tau$\textless 3405   \\
-                   &                          &                            & 25                                                                             & 517.092         & 0.045(1)          & 56 \textless$\tau$\textless 5670    \\
-                   &                          &                            & 250                                                                            & 517.092         & 0.045(2)          & 170 \textless$\tau$\textless 11344  \\ \hline
-\multirow{4}{*}{B} & \multirow{4}{*}{2.89942} & \multirow{4}{*}{0.0452261} & 5                                                                              & 2.89942         & 0.0452(5)         & 1.15 \textless$\tau$\textless 11.6  \\
-                   &                          &                            & 10                                                                             & 2.89942         & 0.045(1)          & 2.3 \textless$\tau$\textless 4.4    \\
-                   &                          &                            & 25                                                                             & 2.89942         & 0.045(5)          & 1.8 \textless$\tau$\textless 5.8    \\
-                   &                          &                            & 250                                                                            & 2.89942         & 0.04(1)           & 1.8 \textless$\tau$\textless 14500  \\ \hline
-\multirow{4}{*}{C} & \multirow{4}{*}{622.257} & \multirow{4}{*}{0.834171}  & 5                                                                              & 622.257         & 0.834171          & 622.257                             \\
-                   &                          &                            & 10                                                                             & 622.257         & 0.834171          & 622.257                             \\
-                   &                          &                            & 25                                                                             &                 &                   &                                     \\
-                   &                          &                            & 250                                                                            & 622.257         & 0.8(1)            & 435 \textless $\tau $\textless 1245
-\end{tabular}
-\end{table}
-
-
-
-
-
-Finally to verify it's performance in noisy areas was conducted an experiment with scaled models where were
-tested three levels of white noise, the results are displayed in table \ref{t:scaled_models}
-
-\begin{table}[h!]
 \centering
 \caption{Measured voltage on scaled models with three levels of white noise.}
 \label{t:scaled_models}
@@ -273,6 +224,63 @@ tested three levels of white noise, the results are displayed in table \ref{t:sc
                                           \\ \hline
 \end{tabular}
 \end{table}
+
+As for the Cole-Cole paramenters, the effect of noise and of sample interval were tested for three models using four values of Gaussian noise and for four different frequency sampling at $5\%$ of Gaussian noise respectively. These three models do not felt inside the frequency band of the resistivimeter as result the characteristic Cole-Cole curve can't be observed instead the measured data approach an straight line. Surprisingly the exponent of Cole-Cole, whose indicate a dependence of complex conductivity with frequency \att{REFERENCIA} was very well determinated in all cases, 
+even under $250\%$ of noise.
+
+In other hand the relaxation time is strongly affected by noise. In table \ref{t:INV-noise_effect} we can see that it's precision vary with the 
+percent of noise while it's accuracy stay roughly the same with the exception of the most extreme case of $250\%$ of noise. Nonetheless the best 
+results of all models recover both parameters within $10\%$ of uncertainty supporting it's application for SIP.
+
+\begin{table}[H]
+\centering
+\caption{Noise effect on the inversion of Cole-Cole parameters}
+\label{t:INV-noise_effect}
+\begin{tabular}{@{}|c|c|c|c|c|c|c|@{}}
+\multicolumn{3}{|c|}{\textbf{Sinthetic Model}}                             & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Noise\\ (\%)\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Calculated Model}}                            \\
+\textbf{Model}     & \textbf{$\tau$}          & \textbf{$e_{cc}$}          &                                                                                & \textbf{$\tau$} & \textbf{$e_{cc}$} & \textbf{$\tau$ deviation}           \\  \hline
+\multirow{4}{*}{A} & \multirow{4}{*}{567.243} & \multirow{4}{*}{0.0452261} & 5                                                                              & 567.243         & 0.0452261         & 567 \textless$\tau$\textless 860    \\
+                   &                          &                            & 10                                                                             & 517.092         & 0.0452(5)         & 113 \textless$\tau$\textless 3405   \\
+                   &                          &                            & 25                                                                             & 517.092         & 0.045(1)          & 56 \textless$\tau$\textless 5670    \\
+                   &                          &                            & 250                                                                            & 517.092         & 0.045(2)          & 170 \textless$\tau$\textless 11344  \\ \hline
+\multirow{4}{*}{B} & \multirow{4}{*}{2.89942} & \multirow{4}{*}{0.0452261} & 5                                                                              & 2.89942         & 0.0452(5)         & 1.15 \textless$\tau$\textless 11.6  \\
+                   &                          &                            & 10                                                                             & 2.89942         & 0.045(1)          & 2.3 \textless$\tau$\textless 4.4    \\
+                   &                          &                            & 25                                                                             & 2.89942         & 0.045(5)          & 1.8 \textless$\tau$\textless 5.8    \\
+                   &                          &                            & 250                                                                            & 2.89942         & 0.04(1)           & 1.8 \textless$\tau$\textless 14500  \\ \hline
+\multirow{4}{*}{C} & \multirow{4}{*}{622.257} & \multirow{4}{*}{0.834171}  & 5                                                                              & 622.257         & 0.834171          & 622.257                             \\
+                   &                          &                            & 10                                                                             & 622.257         & 0.834171          & 622.257                             \\
+                   &                          &                            & 25                                                                             &                 &                   &                                     \\
+                   &                          &                            & 250                                                                            & 622.257         & 0.8(1)            & 435 \textless $\tau $\textless 1245
+\end{tabular}
+\end{table}
+
+The number of samples needed in a survey also were studied with $5\%$ of noise, considered a bad %adverse?
+field situation \att{REFERENCIA}. As showed in table \ref{t:INV-sample_effect} with $16$ samples evenly distributed the relaxation 
+time was within the same order of magnitude of the synthetic model. Despite being less precise, $8$ frequency samples also had similar uncertainty therefore being an viable option as well.
+
+\begin{table}[H]
+\centering
+\caption{Sampling effect on the inversion of Cole-Cole parameters}
+\label{t:INV-sample_effect}
+\begin{tabular}{@{}|c|c|c|c|c|c|c|c|@{}}
+\multicolumn{3}{|c|}{\textbf{Sinthetic Model}}                             & \multirow{2}{*}{\textbf{Sampling}} & \multicolumn{3}{c|}{\textbf{Calculated Model}}                          & \multirow{2}{*}{\textbf{Missfit}}    \\
+\textbf{Model}     & \textbf{$\tau$}          & \textbf{$e_{cc}$}          &                                    & \textbf{$\tau$} & \textbf{$e_{cc}$} & \textbf{$\tau$ deviation}         &                                      \\ \hline
+\multirow{4}{*}{A} & \multirow{4}{*}{567.243} & \multirow{4}{*}{0.0452261} & 2                                  & 517.092         & 0.045(1)          & 113 \textless$\tau$\textless 1702 & 0.02                                 \\
+                   &                          &                            & 4                                  & 474.313         & 0.045(1)          & 454 \textless$\tau$\textless 1702 & 0.01                                 \\
+                   &                          &                            & 8                                  & 567.243         & 0.0452261         & 568 \textless$\tau$\textless 850  & 0.02                                 \\
+                   &                          &                            & 16                                 & 517.092         & 0.045(1)          & 453 \textless$\tau$\textless 568  & 0.03                                 \\ \hline
+\multirow{4}{*}{B} & \multirow{4}{*}{2.89942} & \multirow{4}{*}{0.0452261} & 2                                  & 2.89942         & 0.045(1)          & 0.5 \textless$\tau$\textless 2.9  & 0.007                                \\
+                   &                          &                            & 4                                  & 2.89942         & 0.045(1)          & 0.5 \textless$\tau$\textless 2.9  & 0.013                                \\
+                   &                          &                            & 8                                  & 2.89942         & 0.045(1)          & 1.5 \textless$\tau$\textless 11.6 & 0.015                                \\
+                   &                          &                            & 16                                 & 2.89942         & 0.0452261         & 2.3 \textless$\tau$\textless 2.9  & \textless $10^{-5}$                  \\ \hline
+\multirow{4}{*}{C} & \multirow{4}{*}{622.257} & \multirow{4}{*}{0.834171}  & 2                                  & 622.257         & 0.834171          & 622.257                           & \multirow{4}{*}{\textless $10^{-5}$} \\
+                   &                          &                            & 4                                  & 622.257         & 0.834171          & 622.257                           &                                      \\
+                   &                          &                            & 8                                  & 622.257         & 0.834171          & 622.257                           &                                      \\
+                   &                          &                            & 16                                 & 622.257         & 0.834171          & 622.257                           &                                   \\  \hline
+\end{tabular}
+\end{table}
+
+For the inversion of Cole-Cole parameters the percent of noise in the synthetic model was considered as being the output from ours resistivimeter. Thus filtering capabilities of our resistivimeter wasn't taken account. By the noise rejection displayed in table \ref{t:scaled_models} the viability of SIP is reinforced since a high level of noise in the output consequently implying in higher level of noise in the input. 
 
 \section{Conclusions}
 
