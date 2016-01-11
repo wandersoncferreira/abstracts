@@ -96,74 +96,71 @@ gain of information due to logarithmic nature of frequency.
 \section{Sincronous Detection}
 The synchronous detection also known as \textit{lock-in} is sensitive
 to the difference of frequency and phase between the two inputs
-\att{PRECISA DE UMA REFERENCIA AQUI}, reaching a peak when the
-correlation in the frequency domain is maximum. For this reason it can
+as showed by \citet{meade13}. The voltage reach it's peak when the
+correlation in the frequency domain is maximum therefore it can
 track signals with the same characteristics of the reference channel
-even under intense noise since it doesn't have a correlated
-phase \att{REFERENCIA}. Inside the receiver, the reference channel is
+even under intense noise since the noise doesn't have a correlated
+phase with the reference. Inside the receiver, the reference channel is
 convert to a unitary square wave then is multiplied by the demodulated
 signal as showed in the complete scheme in Figure \ref{f:Lock-in}. The
 resulting DC voltage on the display is the output of the low-pass
-filter of cut frequency no greater than second harmonic of the input wave
- as the equation \ref{e:H(w)} describes.
+filter of cut off frequency no greater than $\omega_{R}$ 
+ as the equation \ref{e:H(w)} describes. % tá esquisito esse paragrafo, mutas ideais misturadas... mas não to conseguindo junta as ideias pra corrigir ele
 
 \begin{equation}
-	v_{p(t)} = V_{S}V_{R}\lbrace \cos( 2\omega_{R} t + [\phi_{R} + \phi_{S}] )
-					     				+ \cos( \Delta\phi_{RS})  
+	v_{p(t)} = V_{S}V_{R}\lbrace
+								\cos \left[ 
+											\left( \omega_{R} + \omega_{S} \right)t + (\phi_{R} + \phi_{S})
+									 \right]
+									+ 
+								\cos \left[ 
+											\left( \omega_{R} - \omega_{S} \right)t + (\phi_{R} - \phi_{S})
+									 \right]
 					     \rbrace
 	\label{e:H(w)}
 \end{equation}
-  
-Therefore, analizing the equation \ref{e:H(w)} we note two
-special cases; (1) the output will be proportional only to the
-resistivity if the two inputs are in phase; (2) the output will be
-proportional only to the imaginary resistivity if they are in
-quadrature which is related to polarization effects. % Isso com certeza vai precisar de referencia
+
+where $V_{S}$, $\phi_{S}$ and $\omega_{S}$ are the respectively amplitude, phase and angular frequency 
+of the measured signal wave and $V_{R}$, $\phi_{R}$ and $\omega_{R}$ are the respectively amplitude, 
+phase and angular frequency of the reference wave.
+
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[keepaspectratio=true,scale=0.3]{Sistema-Inside_Lock_In}
-	\caption{Scheme of synchronous detection. The arrows show the way followed by the source signal from the transmitter injected into the receiver reference channel (\textit{Up}) and signal channel (\textit{down}). In the reference channel $1^{,}$ is a optional attenuator. In the reference channel $1$ is a phase-shifter for correcting the added phase from the detector, $2$ output a square wave from the sine wave input, $3$ is the multiplier and  $4$ the low-pass filter led to the display. }
+	\caption{Scheme of synchronous detection. The arrows show the way followed by the source signal from the transmitter injected into the receiver reference channel (\textit{Up}) and signal channel (\textit{down}). In the reference channel $1^{,}$ is a optional amplifier or attenuator. In the reference channel $1$ is a phase-shifter for correcting the added phase from the detector, $2$ output a square wave from the sine wave input, $3$ is the multiplier and  $4$ the low-pass filter led to the display. }
 	\label{f:Lock-in}
 \end{figure}
+
+
+Therefore, analizing the equation \ref{e:H(w)} we note two
+special cases; (1) the output will be proportional only to the
+resistivity if the two inputs are in phase; (2) the output will be
+proportional only to the imaginary resistivity if they are in
+quadrature which is related to polarization effects.  % Achei uma boa referencia nos papers do TG
 %imaginary resistivity pode ser electric permittivity, NÃO REMOVA ESSE PERCENT!
 
-% Figura sistema
-% transfer function do equipamento
 
-
-
-
-% synchronous detection baixa deriva termica, experimento
-% durou horas
 \section{Inversion}
-As mentioned before, due to pratical limitations our resistivimeter frequency range from $13$ to $120$Hz.
-While a conventional chargeability survey uses much lower frequencies, sample measurements uses higher % Como resultado a cargabilidade não bate, mas tudo bem, isso nao precisa falar... =D
-so is reasonable to assume the validity of it's frequency band for application of equation \ref{e:FE}. However
-find the relaxation time dor SIP survey could be %comprometido, incapacitado, algo assim
-for these frequencies.
-
-
-\begin{equation}
-	F_{e} = \frac{ |V_{(\omega_{1})} - V_{(\omega_{2})}| }{V_{(\omega_{1})}}
-	\label{e:FE}
-\end{equation}
-
-
-An inversion scheme of the Cole-Cole parameters was used to verify how
-many frequency samples from the 13 to 120Hz range is necessary to
-re-build the Cole-Cole curve. The partial sweep scheme was implemented
-wich consists of choosing specific values for the relaxation time
+As mentioned before, due to practical limitations our resistivimeter frequencies 
+range from $13$ to $120$Hz therefore an inversion scheme of the Cole-Cole parameters 
+was used to verify how many frequency samples in this range were needed to
+re-build the Cole-Cole curve. The implemented technique was partial sweep scheme,
+it consists of choosing specific values for the relaxation time
 ($\tau$) and for the Cole-Cole exponent ($c$) inside a prior
-established interval and finally computing a \textit{l2-norm} between
-each modeled curve and the data. In the last step, it's built an image
+established interval and then computing a \textit{l2-norm} between
+each modelled curve and the data. In the last step, it's built an map
 of the solution space which is analized to look for the minima
-positions.  Using equation \ref{e:CC} we define $\tau \in [0:1]$ and
-$c \in [10^{-4}:1]$ based on physical meaningful values for each
-parameter. It is important to highlight that we could have more than
+positions.  Using equation \ref{e:CC} we define $c \in [0:1]$ and
+$\tau \in [10^{-4}:10^{4}]$ based on physical meaningful values for each
+parameter \att{REFERENCIA}
+. It is important to highlight that we could have more than
 one relaxation time in the data, however to simplify our analysis only
 one relaxation time (with possible values inside the prior defined
 range) is used for each Cole-Cole curve.
+
+
+%    Smith, M.J., 1980, Comparison of induced polarization measurements over the Elura orebody, The Geophysics of the Elura Orebody, Cobar NSW, ASEG, 1980, 77-80.
 
 \begin{equation}
 	\sigma_{e} = \sigma_{0}
@@ -177,10 +174,80 @@ range) is used for each Cole-Cole curve.
 \end{equation}
 
 where $\sigma_{e}$ is the complex conductivity, $\sigma_{0}$ is the
-conductivity at zero frequency, $m$ is the chargeability, $\omega$ is the angular frequency, $\tau$ is the relaxation time and $c$ is the Cole-Cole exponent.
+conductivity at zero frequency, $m$ is the chargeability, $\omega$ is 
+the angular frequency, $\tau$ is the relaxation time and $c$ is the 
+Cole-Cole exponent.
+
 
 \section{Results}
+
+
+% transfer function do equipamento
+% synchronous detection baixa deriva termica, experimento
+% durou horas
+
+% Eu até posso calcular. Dependendo de quantas folhas sobrarem.
+%Chargeability could be found from the measured data by the equation 
+%\begin{equation}
+%	F_{E} = \frac{ |V_{(\omega_{1})} - V_{(\omega_{2})}| }{V_{(\omega_{1})}}
+%	\label{e:FE}
+%\end{equation}
 It was tested for four values of Gaussian noise and for four different frequency sampling at $5\%$ of noise.
+
+
+
+\begin{table}[h!]
+\centering
+\caption{Sampling effect on the inversion of Cole-Cole parameters}
+\label{t:INV-sample_effect}
+\begin{tabular}{@{}|c|c|c|c|c|c|c|c|@{}}
+\multicolumn{3}{|c|}{\textbf{Sinthetic Model}}                             & \multirow{2}{*}{\textbf{Sampling}} & \multicolumn{3}{c|}{\textbf{Calculated Model}}                          & \multirow{2}{*}{\textbf{Missfit}}    \\
+\textbf{Model}     & \textbf{$\tau$}          & \textbf{$e_{cc}$}          &                                    & \textbf{$\tau$} & \textbf{$e_{cc}$} & \textbf{$\tau$ deviation}         &                                      \\ \hline
+\multirow{4}{*}{A} & \multirow{4}{*}{567.243} & \multirow{4}{*}{0.0452261} & 2                                  & 517.092         & 0.045(1)          & 113 \textless$\tau$\textless 1702 & 0.02                                 \\
+                   &                          &                            & 4                                  & 474.313         & 0.045(1)          & 454 \textless$\tau$\textless 1702 & 0.01                                 \\
+                   &                          &                            & 8                                  & 567.243         & 0.0452261         & 568 \textless$\tau$\textless 850  & 0.02                                 \\
+                   &                          &                            & 16                                 & 517.092         & 0.045(1)          & 453 \textless$\tau$\textless 568  & 0.03                                 \\ \hline
+\multirow{4}{*}{B} & \multirow{4}{*}{2.89942} & \multirow{4}{*}{0.0452261} & 2                                  & 2.89942         & 0.045(1)          & 0.5 \textless$\tau$\textless 2.9  & 0.007                                \\
+                   &                          &                            & 4                                  & 2.89942         & 0.045(1)          & 0.5 \textless$\tau$\textless 2.9  & 0.013                                \\
+                   &                          &                            & 8                                  & 2.89942         & 0.045(1)          & 1.5 \textless$\tau$\textless 11.6 & 0.015                                \\
+                   &                          &                            & 16                                 & 2.89942         & 0.0452261         & 2.3 \textless$\tau$\textless 2.9  & \textless $10^{-5}$                  \\ \hline
+\multirow{4}{*}{C} & \multirow{4}{*}{622.257} & \multirow{4}{*}{0.834171}  & 2                                  & 622.257         & 0.834171          & 622.257                           & \multirow{4}{*}{\textless $10^{-5}$} \\
+                   &                          &                            & 4                                  & 622.257         & 0.834171          & 622.257                           &                                      \\
+                   &                          &                            & 8                                  & 622.257         & 0.834171          & 622.257                           &                                      \\
+                   &                          &                            & 16                                 & 622.257         & 0.834171          & 622.257                           &                                   \\  \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[h!]
+\centering
+\caption{Noise effect on the inversion of Cole-Cole parameters}
+\label{t:INV-noise_effect}
+\begin{tabular}{@{}|c|c|c|c|c|c|c|@{}}
+\multicolumn{3}{|c|}{\textbf{Sinthetic Model}}                             & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Noise\\ (\%)\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Calculated Model}}                            \\
+\textbf{Model}     & \textbf{$\tau$}          & \textbf{$e_{cc}$}          &                                                                                & \textbf{$\tau$} & \textbf{$e_{cc}$} & \textbf{$\tau$ deviation}           \\  \hline
+\multirow{4}{*}{A} & \multirow{4}{*}{567.243} & \multirow{4}{*}{0.0452261} & 5                                                                              & 567.243         & 0.0452261         & 567 \textless$\tau$\textless 860    \\
+                   &                          &                            & 10                                                                             & 517.092         & 0.0452(5)         & 113 \textless$\tau$\textless 3405   \\
+                   &                          &                            & 25                                                                             & 517.092         & 0.045(1)          & 56 \textless$\tau$\textless 5670    \\
+                   &                          &                            & 250                                                                            & 517.092         & 0.045(2)          & 170 \textless$\tau$\textless 11344  \\ \hline
+\multirow{4}{*}{B} & \multirow{4}{*}{2.89942} & \multirow{4}{*}{0.0452261} & 5                                                                              & 2.89942         & 0.0452(5)         & 1.15 \textless$\tau$\textless 11.6  \\
+                   &                          &                            & 10                                                                             & 2.89942         & 0.045(1)          & 2.3 \textless$\tau$\textless 4.4    \\
+                   &                          &                            & 25                                                                             & 2.89942         & 0.045(5)          & 1.8 \textless$\tau$\textless 5.8    \\
+                   &                          &                            & 250                                                                            & 2.89942         & 0.04(1)           & 1.8 \textless$\tau$\textless 14500  \\ \hline
+\multirow{4}{*}{C} & \multirow{4}{*}{622.257} & \multirow{4}{*}{0.834171}  & 5                                                                              & 622.257         & 0.834171          & 622.257                             \\
+                   &                          &                            & 10                                                                             & 622.257         & 0.834171          & 622.257                             \\
+                   &                          &                            & 25                                                                             &                 &                   &                                     \\
+                   &                          &                            & 250                                                                            & 622.257         & 0.8(1)            & 435 \textless $\tau $\textless 1245
+\end{tabular}
+\end{table}
+
+
+
+
+
+Finally to verify it's performance in noisy areas was conducted an experiment with scaled models where were
+tested three levels of white noise, the results are displayed in table \ref{t:scaled_models}
 
 \begin{table}[h!]
 \centering
@@ -207,55 +274,6 @@ It was tested for four values of Gaussian noise and for four different frequency
 \end{tabular}
 \end{table}
 
-
-\begin{table}[h!]
-\centering
-\caption{Sampling effect on the inversion of Cole-Cole parameters}
-\label{my-label}
-\begin{tabular}{@{}|c|c|c|c|c|c|c|c|@{}}
-\multicolumn{3}{|c|}{\textbf{Sinthetic Model}}                             & \multirow{2}{*}{\textbf{Sampling}} & \multicolumn{3}{c|}{\textbf{Calculated Model}}                          & \multirow{2}{*}{\textbf{Missfit}}    \\
-\textbf{Model}     & \textbf{$\tau$}          & \textbf{$e_{cc}$}          &                                    & \textbf{$\tau$} & \textbf{$e_{cc}$} & \textbf{$\tau$ deviation}         &                                      \\ \hline
-\multirow{4}{*}{A} & \multirow{4}{*}{567.243} & \multirow{4}{*}{0.0452261} & 2                                  & 517.092         & 0.045(1)          & 113 \textless$\tau$\textless 1702 & 0.02                                 \\
-                   &                          &                            & 4                                  & 474.313         & 0.045(1)          & 454 \textless$\tau$\textless 1702 & 0.01                                 \\
-                   &                          &                            & 8                                  & 567.243         & 0.0452261         & 568 \textless$\tau$\textless 850  & 0.02                                 \\
-                   &                          &                            & 16                                 & 517.092         & 0.045(1)          & 453 \textless$\tau$\textless 568  & 0.03                                 \\ \hline
-\multirow{4}{*}{B} & \multirow{4}{*}{2.89942} & \multirow{4}{*}{0.0452261} & 2                                  & 2.89942         & 0.045(1)          & 0.5 \textless$\tau$\textless 2.9  & 0.007                                \\
-                   &                          &                            & 4                                  & 2.89942         & 0.045(1)          & 0.5 \textless$\tau$\textless 2.9  & 0.013                                \\
-                   &                          &                            & 8                                  & 2.89942         & 0.045(1)          & 1.5 \textless$\tau$\textless 11.6 & 0.015                                \\
-                   &                          &                            & 16                                 & 2.89942         & 0.0452261         & 2.3 \textless$\tau$\textless 2.9  & \textless $10^{-5}$                  \\ \hline
-\multirow{4}{*}{C} & \multirow{4}{*}{622.257} & \multirow{4}{*}{0.834171}  & 2                                  & 622.257         & 0.834171          & 622.257                           & \multirow{4}{*}{\textless $10^{-5}$} \\
-                   &                          &                            & 4                                  & 622.257         & 0.834171          & 622.257                           &                                      \\
-                   &                          &                            & 8                                  & 622.257         & 0.834171          & 622.257                           &                                      \\
-                   &                          &                            & 16                                 & 622.257         & 0.834171          & 622.257                           &                                   \\  \hline
-\end{tabular}
-\end{table}
-
-
-
-\begin{table}[h!]
-\centering
-\caption{Noise effect on the inversion of Cole-Cole parameters}
-\label{my-label}
-\begin{tabular}{@{}|c|c|c|c|c|c|c|@{}}
-\multicolumn{3}{|c|}{\textbf{Sinthetic Model}}                             & \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Noise\\ (\%)\end{tabular}}} & \multicolumn{3}{c|}{\textbf{Calculated Model}}                            \\
-\textbf{Model}     & \textbf{$\tau$}          & \textbf{$e_{cc}$}          &                                                                                & \textbf{$\tau$} & \textbf{$e_{cc}$} & \textbf{$\tau$ deviation}           \\  \hline
-\multirow{4}{*}{A} & \multirow{4}{*}{567.243} & \multirow{4}{*}{0.0452261} & 5                                                                              & 567.243         & 0.0452261         & 567 \textless$\tau$\textless 860    \\
-                   &                          &                            & 10                                                                             & 517.092         & 0.0452(5)         & 113 \textless$\tau$\textless 3405   \\
-                   &                          &                            & 25                                                                             & 517.092         & 0.045(1)          & 56 \textless$\tau$\textless 5670    \\
-                   &                          &                            & 250                                                                            & 517.092         & 0.045(2)          & 170 \textless$\tau$\textless 11344  \\ \hline
-\multirow{4}{*}{B} & \multirow{4}{*}{2.89942} & \multirow{4}{*}{0.0452261} & 5                                                                              & 2.89942         & 0.0452(5)         & 1.15 \textless$\tau$\textless 11.6  \\
-                   &                          &                            & 10                                                                             & 2.89942         & 0.045(1)          & 2.3 \textless$\tau$\textless 4.4    \\
-                   &                          &                            & 25                                                                             & 2.89942         & 0.045(5)          & 1.8 \textless$\tau$\textless 5.8    \\
-                   &                          &                            & 250                                                                            & 2.89942         & 0.04(1)           & 1.8 \textless$\tau$\textless 14500  \\ \hline
-\multirow{4}{*}{C} & \multirow{4}{*}{622.257} & \multirow{4}{*}{0.834171}  & 5                                                                              & 622.257         & 0.834171          & 622.257                             \\
-                   &                          &                            & 10                                                                             & 622.257         & 0.834171          & 622.257                             \\
-                   &                          &                            & 25                                                                             &                 &                   &                                     \\
-                   &                          &                            & 250                                                                            & 622.257         & 0.8(1)            & 435 \textless $\tau $\textless 1245
-\end{tabular}
-\end{table}
-
-
-
 \section{Conclusions}
 
 Compared to others instruments in use today, the low power
@@ -279,6 +297,9 @@ recover the Cole-Cole parameters.
 %		Dada a possibilidade de aquisi\c{c}\~ao com v\'arias frequ\^encias, foi analisado o potencial da aplica\c{c}\~ao do eletrorresisitiv\'imetro na medida de polariza\c{c}\~ao ind\'uzida espectral. Os resultados obtidos pela invers\~ao dos par\^ametro de Cole-Cole, sugerem que a faixa de $13$ a $110$ Hertz \'e suficiente para a recupera\c{c}\~ao dos par\^ametros do modelo.
 		
 %		De maneira a aperfei\c{c}oar o equipamento para uso em campo, \'e sugerido a digitaliza\c{c}\~ao da sa\'ida, desta forma a fase poderia ser medida diretamente no equipamento eliminando a etapa de calibra\c{c}\~ao. Esta medida tamb\'em que os dados sejam salvos no equipamento, acelerando o seu processamento. 
+
+\bibliography{Ref_resistivimeter}
+
 \section{Acknowledgements (Optional)}
 
 This is the first sentence of the acknowledgements.
