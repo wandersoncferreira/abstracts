@@ -39,7 +39,7 @@ high electrical noise}}
 
 \title{Development of lock-in resistivimeter for measuring
 resistivity and induced polarization under high electrical noise}
-\author{J.~M.~Oliveira, F.~Hiodo and W.~C.~Ferreira}
+\author{J.~M.~Oliveira, W.~C.~Ferreira and F.~Hiodo}
 \maketitle
 
 % Nota: geralmente a EAGE limita o numero de caracteres no abstract. 
@@ -53,20 +53,21 @@ resistivity and induced polarization under high electrical noise}
 	white noise in the respective models. The equipment was made with
 	low cost components and yet capable of providing a frequency sweep
 	from $13$ to $120$Hz to the transmitter which allows better signal
-	sampling. The vality of it's frequency bandwidth for application in Spectral Induced Polarization (SIP) were 
-	also studied using the Cole-Cole equation. This model was used to find the less time
+	sampling. The viability of this frequency bandwidth for application in
+	Spectral Induced Polarization (SIP) were also studied using the
+	Cole-Cole equation. This model was used to find the less time
 	consuming operational settings able to recover the Cole-Cole
 	exponent and relaxation time, in other words, which are the minimum
 	number of frequency samples that is necessary to reconstruct the
 	Cole-Cole curve. An inversion scheme based on the partial sweep of
-	the solution space was implemented. We found that $16$
-	frequency samples evenly spaced are enough to recover the relaxation
-	time with variations below one order of magnitude. Therefore, the
-	results showed good performance for the developed lock-in
-	resistivimeter. The suggested applications to such equipment is not
-	only restricted to field measurements but also to lab samples
-	studies related to Spectral Induced Polarization (SIP), resistivity
-	and Induced Polarization (IP) under high electrical noise.  
+	the solution space was implemented. We found that $16$ frequency
+	samples evenly spaced are enough to recover the relaxation time with
+	variations below one order of magnitude. Therefore, the results
+	showed good performance for the developed lock-in resistivimeter.
+	The suggested applications to such equipment is not only restricted
+	to field measurements but also to lab samples studies related to
+	Spectral Induced Polarization (SIP), resistivity and Induced
+	Polarization (IP) under high electrical noise.  
 \end{abstract}	
 		
 
@@ -95,14 +96,15 @@ distortion increases drastically and above the 120Hz there is little
 gain of information due to logarithmic nature of frequency.
 
 \section{Sincronous Detection}
-As showed by \citet{meade13} the synchronous detection also known as \textit{lock-in} is sensitive
-to the difference of frequency and phase between the two inputs. 
-Inside the receiver, the reference channel is converted to a unitary square wave 
-as a mean to multiply the demodulated signal of interest. As shown in the complete scheme 
-of Figure \ref{f:Lock-in}, after that the product is injected into a low-pass filter. Setting 
-the cut off frequency of the low-pass filter to a value no greater than the reference 
-frequency the output in the scheme of Figure \ref{f:Lock-in} will be a DC voltage described 
-by equation \ref{e:v_out}.
+As introduced by \citet{meade13} the synchronous detection also known
+as \textit{lock-in} is sensitive to the differences in frequency and
+phase between two input signals.  Inside the receiver, the reference
+channel is converted to an unitary square wave to multiply the
+demodulated signal of interest. As shown in the complete scheme of
+Figure \ref{f:Lock-in}, after the multiplication the product goes
+into a low-pass filter. Setting the cut off frequency of the low-pass
+filter to a value no greater than the reference frequency will produce
+the output to be a DC voltage signal described by equation \ref{e:v_out}.
 
 \begin{equation}
 	v_{(t)} = H_{(\omega)} V_{S} 
@@ -114,9 +116,11 @@ by equation \ref{e:v_out}.
 	\label{e:v_out}
 \end{equation}
 
-where $H_{(\omega)}$ is an transfer function of the low-pass filter, $V_{S}$ and $\phi_{S}$ are the amplitude and phase
-of the signal wave, $\phi_{R}$ is the phase of the square wave of reference and unitary amplitude and ${\langle n_{(t)} \rangle}_{\lambda}$
-is the noise averaged over the time of the measurement $\lambda$. 
+where $H_{(\omega)}$ is a transfer function of the low-pass filter,
+$V_{S}$ and $\phi_{S}$ are the amplitude and phase of the measured
+signal, $\phi_{R}$ is the phase of the square wave and ${\langle
+	n_{(t)} \rangle}_{\lambda}$ is the noise averaged over the time of
+	measurement $\lambda$. 
 
 % Se puder falar do filtro usado ia ser muito bom. 
 
@@ -128,29 +132,48 @@ is the noise averaged over the time of the measurement $\lambda$.
 \end{figure}
 
 
-The mainly advantage from lock-in resistivimeters over DC ones can be seen in equation \ref{e:v_out}. It attenuate noises as the white noise whose phase doesn't correlate with the reference since it's average over time approach zero. From which the Johnson-Nyquist is perhaps the more significant since it increase in amplitude with the spacing of the geoelectrical array as shown by \citet{alfano82}. With a narrow band filter it can filter almost all interferences including these from electric power supplies, in our multifrequency resistivimeter it can also be achieved samplig data in another frequency.
+The main advantage of the lock-in resistivimeter over convetional ones
+(DC) is illustrated in equation \ref{e:v_out} by the attenuation of
+noises such as the white noise whose phase doesn't correlate with the
+reference signal since it's average over time approaches zero. The
+Johnson-Nyquist noise is perhaps the most significant in geoelectrical
+measurements since it's amplitude increases with the spacing of the
+geoelectrical arrays \citep{alfano82}.
 
+Setting a narrow bandwidth filter is possible to avoid almost all
+interferences including the electric power supplies which can be
+avoided in our multifrequency resistivimeter by sampling the data in
+another frequency far from 55Hz - 60Hz.
 
-There is two possible configuration for taking measurements: (1) Setting $\phi_{R}$ in-phase with $\phi_{S}$ and (2) Setting $\phi_{R}$ in quadrature with $\phi_{S}$. In configuration (1) the resistivimeter is sensible only to amplitude $V_{S}$
-while in (2) it work linearly with changes in phase $\phi_{S}$ until ${\pi}/{6}$ rad. Both measurements can be used to extract information of
-capacitive and resistive properties as discussed by \citet{tarasov13},\citet{edmundo14} and \citet{weller96}.
+There are two possible configurations for taking measurements: (1)
+Setting $\phi_{R}$ in-phase with $\phi_{S}$ and (2) Setting $\phi_{R}$
+in quadrature with $\phi_{S}$. Using the configuration (1) the
+resistivimeter is sensible only to amplitude $V_{S}$ changes while in
+(2) it works linearly with changes in phase $\phi_{S}$ until the phase
+of ${\pi}/{6}$rad. Both measurements can be used to extract
+information of capacitive and resistivity properties of the subsurface
+as discussed by \citet{tarasov13},\citet{edmundo14} and
+\citet{weller96}.
 
 \section{Inversion}
-As mentioned before, due to practical limitations our resistivimeter frequencies 
-range from $13$ to $120$Hz therefore an inversion scheme of the Cole-Cole parameters 
-was used to verify how many frequency samples in this range were needed to
-re-build the Cole-Cole curve. The implemented technique was partial sweep scheme,
-it consists of choosing specific values for the relaxation time
-($\tau$) and for the Cole-Cole exponent ($c$) inside a prior
-established interval and then computing a \textit{l2-norm} between
-each modelled curve and the data. In the last step, it's built an map
-of the solution space which is analized to look for the minima
-positions.  Using equation \ref{e:CC} , defined by \citet{tarasov13} we define $c \in [0:1]$ and
-$\tau \in [10^{-4}:10^{4}]$ based on empirical values for relaxation time \citet{telford90}
-. It is important to highlight that we could have more than
-one relaxation time in the data, however to simplify our analysis only
-one relaxation time (with possible values inside the prior defined
-range) is used for each Cole-Cole curve.
+Due to practical limitations, our resistivimeter works in frequencies
+ranging from $13$ to $120$Hz. However, we still investigate the
+viability to use this equipment to perform Spectral Induced
+Polarization (SIP) studies. Therefore an inversion scheme of the
+Cole-Cole parameters was used to verify how many frequency samples in
+this range were needed to re-build the Cole-Cole curve. The
+implemented technique was the partial sweep scheme, it consists of
+choosing specific values for the relaxation time ($\tau$) and for the
+Cole-Cole exponent ($c$) inside a prior established interval and then
+computing a \textit{l2-norm} between each modelled curve and the data.
+In the last step, it's built an map of the solution space which is
+analized to look for the minima positions.  Using equation \ref{e:CC}
+, defined by \citet{tarasov13} we define $c \in [0:1]$ and $\tau \in
+[10^{-4}:10^{4}]$ based on empirical values for relaxation time
+\citet{telford90} . It is important to highlight that we could have
+more than one relaxation time in the data, however to simplify our
+analysis only one relaxation time (with possible values inside the
+prior defined range) is used for each Cole-Cole curve.
 
 
 %    Smith, M.J., 1980, Comparison of induced polarization measurements over the Elura orebody, The Geophysics of the Elura Orebody, Cobar NSW, ASEG, 1980, 77-80.
@@ -187,11 +210,16 @@ Cole-Cole exponent.
 %\end{equation}
 
 
-To verify it's performance in noisy areas was conducted an experiment with scaled models where were
-tested how much it's measurements are affected by white noise. The results of table \ref{t:scaled_models} show
-a good performance even under $67\%$ in the RC circuit of $12 \mu$F. As result of such high capacitance, the in-phase 
-output was working as the quadrature and vise versa. The outcome of a model more close to data expected from field survey, 
-a clay tank of $1125$ cm$^3$, also points to application even under $11\%$ of white noise as showed in table \ref{t:scaled_models}.
+In order to verify the performance of the equipment in noisy
+environments, was conducted an experiment with scaled models testing
+how much of the measurements are affected by white noise. The results
+of Table \ref{t:scaled_models} show a good performance even under
+$67\%$ in the RC circuit of $12 \mu$F. As the result of such high
+capacitance, the in-phase and the quadrature measurements were
+switched. The outcome of a model more similar to the expected data
+from field surveys was also used. A clay tank of $1125$ cm$^3$, also
+points to application even under $11\%$ of white noise as showed in
+Table \ref{t:scaled_models}.
 
 \begin{table}[H]
 \centering
@@ -218,9 +246,20 @@ a clay tank of $1125$ cm$^3$, also points to application even under $11\%$ of wh
 \end{tabular}
 \end{table}
 
-As for the Cole-Cole paramenters, the effect of noise and of sample interval were tested for three models using four values of Gaussian noise and for four different frequency sampling at $5\%$ of Gaussian noise respectively. These three models do not felt inside the frequency band of the resistivimeter as result the characteristic Cole-Cole curve can't be observed instead the measured data approach an straight line. Surprisingly the exponent of Cole-Cole  was very well determinated in all cases, even under $250\%$ of noise, despite relating a dependence of complex conductivity with frequency as showed in the original work of \citet{cole41}.
+As for the Cole-Cole paramenters, the effect of noise and of sample
+interval were tested for three different models using four values of
+Gaussian noise and to four different frequency sampling at $5\%$ of
+Gaussian noise respectively. For these three models, the frequency for
+theirs relaxation time are not inside the frequency bandwidth of the
+resistivimeter. Therefore, the characteristic Cole-Cole curve can't be
+observed. In this way, the measured data approach a straight line. 
 
-In other hand the relaxation time is strongly affected by noise. In table \ref{t:INV-noise_effect} we can see that it's precision vary with the 
+As we can see in Table \ref{t:INV-noise_effect}, the exponent of
+Cole-Cole was very well determinated for all cases, even under $250\%$
+of noise, despite relating a dependence of complex conductivity with
+frequency as showed in the original work of \citet{cole41}.
+
+In other hand the relaxation time is strongly affected by noise. In Table \ref{t:INV-noise_effect} we can see that it's precision vary with the 
 percent of noise while it's accuracy stay roughly the same with the exception of the most extreme case of $250\%$ of noise. Nonetheless the best 
 results of all models recover both parameters within $10\%$ of uncertainty supporting it's application for SIP.
 
@@ -247,7 +286,7 @@ results of all models recover both parameters within $10\%$ of uncertainty suppo
 \end{table}
 
 The number of samples needed in a survey also were studied with $5\%$ of noise, considered a bad %adverse?
-field situation \citet{sandor11}. As showed in table \ref{t:INV-sample_effect} with $16$ samples evenly distributed the relaxation 
+field situation \citet{sandor11}. As showed in Table \ref{t:INV-sample_effect} with $16$ samples evenly distributed the relaxation 
 time was within the same order of magnitude of the synthetic model. Despite being less precise, $8$ frequency samples also had similar uncertainty therefore being an viable option as well.
 
 \begin{table}[H]
@@ -272,7 +311,10 @@ time was within the same order of magnitude of the synthetic model. Despite bein
 \end{tabular}
 \end{table}
 
-For the inversion of Cole-Cole parameters the percent of noise in the synthetic model was considered as being the output from ours resistivimeter. Thus filtering capabilities of our resistivimeter wasn't taken account. By the noise rejection displayed in table \ref{t:scaled_models} the viability of SIP is reinforced since a high level of noise in the output consequently implying in higher level of noise in the input. 
+For the inversion of Cole-Cole parameters the percent of noise in the
+synthetic model was considered as being the output from ours
+resistivimeter. Thus filtering capabilities of our resistivimeter
+wasn't taken account. By the noise rejection displayed in Table \ref{t:scaled_models} the viability of SIP is reinforced since a high level of noise in the output consequently implying in higher level of noise in the input. 
 
 \section{Conclusions}
 
