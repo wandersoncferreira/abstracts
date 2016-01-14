@@ -284,7 +284,10 @@ with the exception of the most extreme case of $250\%$ of noise.
 
 \begin{table}[H]
 \centering
-\caption{Noise effect on the inversion of Cole-Cole parameters}
+\caption{Noise effect on the inversion of Cole-Cole
+parameters. Each mean measurement is the result of 250 runs
+of the inversion algorithm. This approach was used to verify
+the stability for the solutions.}
 \label{t:INV-noise_effect}
 \begin{adjustbox}{scale=0.8}
 \begin{tabular}{|c|cc|c|ccc|ccc|}
@@ -297,19 +300,27 @@ with the exception of the most extreme case of $250\%$ of noise.
  &  &  & \multicolumn{1}{l|}{} & \textbf{Mean} & \textbf{\begin{tabular}[c]{@{}c@{}}Standard \\ Deviation\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Relative \\ error\end{tabular}} & \textbf{Mean} & \textbf{\begin{tabular}[c]{@{}c@{}}Standard \\ Deviation\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Relative \\ error\end{tabular}} \\ \hline
 \multirow{4}{*}{A} & \multirow{4}{*}{567.24} &
 \multirow{4}{*}{0.04523} 
- 				& 5 &  &  &  &  &  &  \\
- &  &  & 10 & 930.259 & 959 & 64 & 0.04519 & 0.0037 & 0.1 \\
- &  &  & 25 &  &  &  &  &  &  \\
- &  &  & 250 &  &  &  &  &  &  \\ \hline
+ 				& 5 & 648.72  & 411.6  & 14.4    & 0.04519 & 0.0018
+				& 0.097 \\
+ &  &  & 10 & 930.3 & 959.0  & 64      & 0.04519 & 0.0037
+ & 0.10 \\
+ &  &  & 25 & 1931.3  & 2777.4 & 240.5   & 0.04696 & 0.0081
+ & 3.81 \\
+ &  &  & 250 & 4209.8 & 4651.8 & 640.1   & 0.07899 & 0.0616
+ &  74.65\\ \hline
 \multirow{4}{*}{B} & \multirow{4}{*}{622.26} & \multirow{4}{*}{0.83417} &
 					5  & 622.26  & 10e-15 &  0      & 0.8342 & 10e-15 & 0  \\
- &  &  & 10  & 622.26  & 10e-12 &  0.0005 & 0.8342 & 10e-15 & 0.0001 \\
+ &  &  & 10  & 622.26  & 10e-12 &  0.001 & 0.8342 & 10e-15 & 0.0001 \\
  &  &  & 25  & 626.96  & 10e-3  &  0.76   & 0.8337 & 10e-3  & 0.05 \\
  &  &  & 250 & 704.77  & 10e-2  &  13.26  & 0.8336 & 10e-2  & 0.06 \\ \hline
-\multirow{4}{*}{C} & \multirow{4}{*}{2.8994} & \multirow{4}{*}{0.15075} & 5 &  &  &  &  &  &  \\
- &  &  & 10 & 2.9746 & 0.38 & 2.6 & 0.15033 & 0.0035 & 0.28 \\
- &  &  & 25 &  &  &  &  &  &  \\
- &  &  & 250 &  &  &  &  &  &  \\ \hline
+\multirow{4}{*}{C} & \multirow{4}{*}{2.8994} & \multirow{4}{*}{0.15075} 
+				& 5 & 2.898 & 0.195 & 0.04    & 0.15077 & 0.0018 &
+				0.01  \\
+ &  &  & 10 & 2.975 & 0.380 & 2.60 & 0.15033 & 0.0035 & 0.28 \\
+ &  &  & 25 & 3.056 & 0.924 & 5.41   & 0.15017 & 0.0072  &
+ 0.38 \\
+ &  &  & 250 & 1122.1 &  2852.6 & $\inf$  & 0.15706 & 0.0707
+ & 4.18  \\ \hline
 \end{tabular}
 \end{adjustbox}
 \end{table}
