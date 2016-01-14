@@ -12,29 +12,29 @@
 
 % COMENTAR ANTES DE SUBMETER!
 % Comando temporarios
-\usepackage{color}
-\usepackage[normalem]{ulem}
-\newcommand{\new}[1]{\textcolor{blue}{#1}}
-\newcommand{\old}[1]{\textcolor{MyDarkViolet}{\sout{#1}}}
-\newcommand{\att}[1]{\textcolor{red}{#1}}
-\newcommand{\js}[1]{\textcolor{darkgreen}{#1}}
-\newcommand{\obs}[1]{\textcolor{orange}{#1}}
-\definecolor{MyDarkViolet}{rgb}{0.602,0,0.602}
-\definecolor{orange}{RGB}{255,127,0}
-\definecolor{darkgreen}{RGB}{0,127,0}
+%\usepackage{color}
+%\usepackage[normalem]{ulem}
+%\newcommand{\new}[1]{\textcolor{blue}{#1}}
+%\newcommand{\old}[1]{\textcolor{MyDarkViolet}{\sout{#1}}}
+%\newcommand{\att}[1]{\textcolor{red}{#1}}
+%\newcommand{\js}[1]{\textcolor{darkgreen}{#1}}
+%\newcommand{\obs}[1]{\textcolor{orange}{#1}}
+%\definecolor{MyDarkViolet}{rgb}{0.602,0,0.602}
+%\definecolor{orange}{RGB}{255,127,0}
+%\definecolor{darkgreen}{RGB}{0,127,0}
 
 % For pdf hyperlinks
-\usepackage{hyperref}
-\hypersetup{colorlinks=true}
-\hypersetup{citecolor=blue}
-\hypersetup{pdftitle={Development of lock-in resistivimeter
-for measuring resistivity and induced polarization under
-high electrical noise}}
-\hypersetup{pdfauthor={J.~M.~Oliveira, W.~C.~Ferreira and F.~Hiodo}}
+%\usepackage{hyperref}
+%\hypersetup{colorlinks=true}
+%\hypersetup{citecolor=blue}
+%\hypersetup{pdftitle={Development of lock-in resistivimeter
+%for measuring resistivity and induced polarization under
+%high electrical noise}}
+%\hypersetup{pdfauthor={J.~M.~Oliveira, W.~C.~Ferreira and F.~Hiodo}}
 % For making a print without color links
-\hypersetup{linkcolor=black,citecolor=black,filecolor=black,urlcolor=black}
-\hypersetup{linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
-\usepackage{url}
+%\hypersetup{linkcolor=black,citecolor=black,filecolor=black,urlcolor=black}
+%\hypersetup{linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
+%\usepackage{url}
 \begin{document}
 
 \title{Development of lock-in resistivimeter for measuring
@@ -222,9 +222,10 @@ hightlight that all relative errors found to the RC circuit
 experiment is comparable to the voltimeter precision.
 
 
-The outcome of a model more similar to the expected data
-from field surveys was also used. A clay tank of $1125$ cm$^3$. As the result of such high capacitance, the in-phase and the quadrature measurements were
-switched when compared to the RC circuit. The results in Table
+The outcome of a model more similar to the expected data from field
+surveys was also used. A clay tank of $1125$ cm$^3$. As the result of
+such high capacitance, the in-phase and the quadrature measurements
+were switched when compared to the RC circuit. The results in Table
 \ref{t:scaled_models} showed that we got good results for the In phase
 measurement under $11\%$ of noise, however the quadrature measurement
 was not quite possible to analyze due to the invariance when adding
@@ -234,7 +235,7 @@ more noise. This point still requires more investigations.
 \centering
 \caption{Results from the experiment with the RC circuit and the clay
 tank. Each measurement in this table is the outcome of an average of
-four repeated measures. The error of the voltimeter is 1mV.}
+four repeated measures. The error of the voltimeter is 200mV.}
 \label{t:scaled_models}
 \begin{adjustbox}{max width=\textwidth}
 \begin{tabular}{
@@ -258,22 +259,28 @@ four repeated measures. The error of the voltimeter is 1mV.}
 \end{adjustbox}
 \end{table}
 
-As for the Cole-Cole paramenters, the effect of noise and of sample
-interval were tested for three different models using four values of
-Gaussian noise and to four different frequency sampling at $5\%$ of
-Gaussian noise respectively. For these three models, the frequency for
-theirs relaxation time are not inside the frequency bandwidth of the
+The inversion study with the Cole-Cole paramenters was performed to
+analyze the effects of the white noise and the number of samples for
+three different models using four different avalues of
+Gaussian noise. For these three models, the frequencies where the
+relaxation time is placed are not inside the frequency bandwidth of the
 resistivimeter. Therefore, the characteristic Cole-Cole curve can't be
 observed. In this way, the measured data approach a straight line. 
 
 As we can see in Table \ref{t:INV-noise_effect}, the exponent of
 Cole-Cole was very well determinated for all cases, even under $250\%$
-of noise, despite relating a dependence of complex conductivity with
-frequency as showed in the original work of \citet{cole41}.
-
-In other hand the relaxation time is strongly affected by noise. In Table \ref{t:INV-noise_effect} we can see that it's precision vary with the 
-percent of noise while it's accuracy stay roughly the same with the exception of the most extreme case of $250\%$ of noise. Nonetheless the best 
-results of all models recover both parameters within $10\%$ of uncertainty supporting it's application for SIP.
+of noise.  %despite relating a dependence of complex conductivity with
+%frequency as showed in the original work of \citet{cole41}.
+On the other hand the relaxation time is strongly affected by noise
+depending on the Cole-Cole curve behavior. For example, case Model A
+has a Cole-Cole curve similar to a straight line due to a very small
+coeficiente $c$, therefore the effects of noise are intensified
+because the noise will easily change the slope of the curve. In
+Table \ref{t:INV-noise_effect} we can see that it's precision vary
+with the percent of noise while it's accuracy stay roughly the same
+with the exception of the most extreme case of $250\%$ of noise.
+SERA????SERA???Nonetheless the best results of all models recover both parameters
+within $10\%$ of uncertainty supporting it's application for SIP.
 
 \begin{table}[H]
 \centering
@@ -283,7 +290,10 @@ results of all models recover both parameters within $10\%$ of uncertainty suppo
 \begin{tabular}{|c|cc|c|ccc|ccc|}
 \hline
 \multicolumn{3}{|c|}{\textbf{Synthetic Models}} &  & \multicolumn{6}{c|}{\textbf{Recovered Parameters}} \\ \hline
-\multirow{2}{*}{\textbf{Model}} & \multirow{2}{*}{\textbf{$\tau$}} & \multirow{2}{*}{\textbf{$c$}} & \multicolumn{1}{l|}{\multirow{2}{*}{\textbf{Noise}}} & \multicolumn{3}{c|}{\textbf{$\tau$}} & \multicolumn{3}{c|}{\textbf{$c$}} \\ \cline{5-10} 
+\multirow{2}{*}{\textbf{Model}} & \multirow{2}{*}{\textbf{$\tau (s)$}} &
+\multirow{2}{*}{\textbf{$c$}} &
+\multicolumn{1}{l|}{\multirow{2}{*}{\textbf{Noise}}} &
+\multicolumn{3}{c|}{\textbf{$\tau (s)$}} & \multicolumn{3}{c|}{\textbf{$c$}} \\ \cline{5-10} 
  &  &  & \multicolumn{1}{l|}{} & \textbf{Mean} & \textbf{\begin{tabular}[c]{@{}c@{}}Standard \\ Deviation\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Relative \\ error\end{tabular}} & \textbf{Mean} & \textbf{\begin{tabular}[c]{@{}c@{}}Standard \\ Deviation\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Relative \\ error\end{tabular}} \\ \hline
 \multirow{4}{*}{A} & \multirow{4}{*}{567.24} &
 \multirow{4}{*}{0.04523} 
@@ -303,9 +313,15 @@ results of all models recover both parameters within $10\%$ of uncertainty suppo
 \end{tabular}
 \end{adjustbox}
 \end{table}
-The number of samples needed in a survey also were studied with $5\%$ of noise, considered a bad %adverse?
-field situation \citet{sandor11}. As showed in Table \ref{t:INV-sample_effect} with $16$ samples evenly distributed the relaxation 
-time was within the same order of magnitude of the synthetic model. Despite being less precise, $8$ frequency samples also had similar uncertainty therefore being an viable option as well.
+
+The number of samples needed in a survey also were studied adding $5\%$
+of noise in all the models presented in Table
+\ref{t:INV-sample_effect}, which is considered an adverse field situation
+\citet{sandor11}. As showed in Table \ref{t:INV-sample_effect} with
+$16$ samples evenly distributed, the relaxation time was within the
+same order of magnitude of the synthetic model. Despite being less
+precise, $8$ frequency samples also had similar uncertainties, therefore
+being a viable option as well.
 
 \begin{table}[H]
 \centering
@@ -314,7 +330,8 @@ time was within the same order of magnitude of the synthetic model. Despite bein
 \begin{adjustbox}{scale=0.9}
 \begin{tabular}{@{}|c|c|c|c|c|c|c|c|@{}}
 \multicolumn{3}{|c|}{\textbf{Sinthetic Model}}                             & \multirow{2}{*}{\textbf{Sampling}} & \multicolumn{3}{c|}{\textbf{Calculated Model}}                          & \multirow{2}{*}{\textbf{Missfit}}    \\
-\textbf{Model}     & \textbf{$\tau$}          & \textbf{$e_{cc}$}          &                                    & \textbf{$\tau$} & \textbf{$e_{cc}$} & \textbf{$\tau$ deviation}         &                                      \\ \hline
+\textbf{Model}     & \textbf{$\tau (s)$}          & \textbf{$c$}
+&                                    & \textbf{$\tau (s)$} & \textbf{$c$} & \textbf{$\tau$ deviation}         &                                      \\ \hline
 \multirow{4}{*}{A} & \multirow{4}{*}{567.243} & \multirow{4}{*}{0.0452261} & 2                                  & 517.092         & 0.045(1)          & 113 \textless$\tau$\textless 1702 & 0.02                                 \\
                    &                          &                            & 4                                  & 474.313         & 0.045(1)          & 454 \textless$\tau$\textless 1702 & 0.01                                 \\
                    &                          &                            & 8                                  & 567.243         & 0.0452261         & 568 \textless$\tau$\textless 850  & 0.02                                 \\
@@ -334,7 +351,10 @@ time was within the same order of magnitude of the synthetic model. Despite bein
 For the inversion of Cole-Cole parameters the percent of noise in the
 synthetic model was considered as being the output from ours
 resistivimeter. Thus filtering capabilities of our resistivimeter
-wasn't taken account. By the noise rejection displayed in Table \ref{t:scaled_models} the viability of SIP is reinforced since a high level of noise in the output consequently implying in higher level of noise in the input. 
+wasn't taken account. By the noise rejection showed in Table
+\ref{t:scaled_models} the viability of SIP is reinforced since a high
+level of noise in the output consequently implying in higher level of
+noise in the input. 
 
 \section{Conclusions}
 
