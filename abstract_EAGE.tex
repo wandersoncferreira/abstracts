@@ -213,37 +213,49 @@ Cole-Cole exponent.
 In order to verify the performance of the equipment in noisy
 environments, was conducted an experiment with scaled models testing
 how much of the measurements are affected by white noise. The results
-of Table \ref{t:scaled_models} show a good performance even under
-$67\%$ in the RC circuit of $12 \mu$F. As the result of such high
-capacitance, the in-phase and the quadrature measurements were
-switched. The outcome of a model more similar to the expected data
-from field surveys was also used. A clay tank of $1125$ cm$^3$, also
-points to application even under $11\%$ of white noise as showed in
-Table \ref{t:scaled_models}.
+of Table \ref{t:scaled_models} show a good performance for the
+equipment even under
+$67\%$ of noise for the RC circuit of $12 \mu$F. We used the
+measurements in noise-free environment as a baseline to verify how
+much error was introduced in the results. It's important to
+hightlight that all relative errors found to the RC circuit
+experiment is comparable to the voltimeter precision.
+
+
+The outcome of a model more similar to the expected data
+from field surveys was also used. A clay tank of $1125$ cm$^3$. As the result of such high capacitance, the in-phase and the quadrature measurements were
+switched when compared to the RC circuit. The results in Table
+\ref{t:scaled_models} showed that we got good results for the In phase
+measurement under $11\%$ of noise, however the quadrature measurement
+was not quite possible to analyze due to the invariance when adding
+more noise. This point still requires more investigations.
 
 \begin{table}[H]
 \centering
-\caption{Measured voltage on scaled models with three levels of white noise.}
+\caption{Results from the experiment with the RC circuit and the clay
+tank. Each measurement in this table is the outcome of an average of
+four repeated measures. The error of the voltimeter is 1mV.}
 \label{t:scaled_models}
-\begin{tabular}{cccl|ccc}
-\multirow{2}{*}{\textbf{Noise level (\%)}}  & \multicolumn{2}{c}{\textbf{Output}}     &  & \textbf{Noise Level (\%)} & \multicolumn{2}{c}{\textbf{Output}}     \\
-                         & \textbf{In Phase}  & \textbf{Quadrature} &  &  	 				& \textbf{In Phase} & \textbf{Quadrature} 	\\
-\multirow{4}{*}{0}	 		& 1.52              & 8.45                &  & 	\multirow{4}{*}{0}	&  5.24				&		1.80			\\
-					 		& 1.60              & 8.50                &  &						&  4.75				&		1.90			\\
-					 		& 1.44              & 8.46                &  &						&  4.80				&		1.92			\\
-					 		& 1.48              & 8.40                &  &						&  5.30		    	&		1.81	 
-                                         \\ \hline                                   
-\multirow{4}{*}{40}	 		& 1.06              & 8.42                &  & 	\multirow{4}{*}{11}	&	4.70			&		1.32			\\
-					 		& 1.28              & 8.41                &  &						&	4.60			&		1.20			\\
-					 		& 1.29              & 8.37                &  &						&	4.68			&		1.26			\\
-					 		& 1.30              & 8.45                &  &						&	4.50			&		1.28			  
-                                         \\ \hline
-\multirow{4}{*}{67}	 		& 1.29              & 8.48                &  & 	\multirow{4}{*}{27}	&	2.30			&		1.30			\\
-					 		& 1.28              & 8.48                &  &						&	2.05			&		1.20			\\
-					 		& 1.29              & 8.48                &  &						&	2.12			&		1.24			\\
-					 		& 1.30              & 8.50                &  &						&	2.50			&		1.32			  
-                                          \\ \hline
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{
+>{\columncolor[HTML]{FFFFC7}}c 
+>{\columncolor[HTML]{FFFFC7}}c 
+>{\columncolor[HTML]{FFFFC7}}c 
+>{\columncolor[HTML]{FFFFC7}}c 
+>{\columncolor[HTML]{FFFFC7}}c 
+>{\columncolor[HTML]{BBDAFF}}c 
+>{\columncolor[HTML]{BBDAFF}}c 
+>{\columncolor[HTML]{BBDAFF}}c 
+>{\columncolor[HTML]{BBDAFF}}c 
+>{\columncolor[HTML]{BBDAFF}}c }
+\hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FFFFC7}\textbf{\begin{tabular}[c]{@{}c@{}}Noise level \\ (\%)\end{tabular}}} & \multicolumn{4}{c|}{\cellcolor[HTML]{FFFFC7}\textbf{RC circuit}} & \multicolumn{1}{c|}{\cellcolor[HTML]{BBDAFF}\textbf{\begin{tabular}[c]{@{}c@{}}Noise level\\  (\%)\end{tabular}}} & \multicolumn{4}{c|}{\cellcolor[HTML]{BBDAFF}\textbf{Clay tank}} \\ \hline
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FFFFC7}\textbf{}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFC7}\textbf{\begin{tabular}[c]{@{}c@{}}In Phase\\ (V)\end{tabular}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFC7}\textbf{\begin{tabular}[c]{@{}c@{}}Relative \\ error (\%)\end{tabular}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFC7}\textbf{\begin{tabular}[c]{@{}c@{}}Quadrature\\ (V)\end{tabular}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFFFC7}\textbf{\begin{tabular}[c]{@{}c@{}}Relative \\ error (\%)\end{tabular}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{BBDAFF}\textbf{}} & \multicolumn{1}{c|}{\cellcolor[HTML]{BBDAFF}\textbf{\begin{tabular}[c]{@{}c@{}}In Phase\\ (V)\end{tabular}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{BBDAFF}\textbf{\begin{tabular}[c]{@{}c@{}}Relative \\ error (\%)\end{tabular}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{BBDAFF}\textbf{\begin{tabular}[c]{@{}c@{}}Quadrature\\ (V)\end{tabular}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{BBDAFF}\textbf{\begin{tabular}[c]{@{}c@{}}Relative \\ error (\%)\end{tabular}}} \\ \hline
+0 & 1.51 & - & 8.4525 & - & 0 & 5.24 & - & 1.80 & - \\
+40 & 1.2325 & 18.4 & 8.4125 & 0.5 & 11 & 4.62 & 8.01 & 1.265 & 31.9 \\
+67 & 1.29 & 14.6 & 8.485 & 0.4 & 27 & 2.24 & 55.4 & 1.265 & 31.9
 \end{tabular}
+\end{adjustbox}
 \end{table}
 
 As for the Cole-Cole paramenters, the effect of noise and of sample
@@ -273,14 +285,17 @@ results of all models recover both parameters within $10\%$ of uncertainty suppo
 \multicolumn{3}{|c|}{\textbf{Synthetic Models}} &  & \multicolumn{6}{c|}{\textbf{Recovered Parameters}} \\ \hline
 \multirow{2}{*}{\textbf{Model}} & \multirow{2}{*}{\textbf{$\tau$}} & \multirow{2}{*}{\textbf{$c$}} & \multicolumn{1}{l|}{\multirow{2}{*}{\textbf{Noise}}} & \multicolumn{3}{c|}{\textbf{$\tau$}} & \multicolumn{3}{c|}{\textbf{$c$}} \\ \cline{5-10} 
  &  &  & \multicolumn{1}{l|}{} & \textbf{Mean} & \textbf{\begin{tabular}[c]{@{}c@{}}Standard \\ Deviation\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Relative \\ error\end{tabular}} & \textbf{Mean} & \textbf{\begin{tabular}[c]{@{}c@{}}Standard \\ Deviation\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Relative \\ error\end{tabular}} \\ \hline
-\multirow{4}{*}{A} & \multirow{4}{*}{567.24} & \multirow{4}{*}{0.04523} & 5 &  &  &  &  &  &  \\
+\multirow{4}{*}{A} & \multirow{4}{*}{567.24} &
+\multirow{4}{*}{0.04523} 
+ 				& 5 &  &  &  &  &  &  \\
  &  &  & 10 & 930.259 & 959 & 64 & 0.04519 & 0.0037 & 0.1 \\
  &  &  & 25 &  &  &  &  &  &  \\
  &  &  & 250 &  &  &  &  &  &  \\ \hline
-\multirow{4}{*}{B} & \multirow{4}{*}{622.26} & \multirow{4}{*}{0.83417} & 5 &  &  &  &  &  &  \\
- &  &  & 10 & 622.260 & E-12 & 0.0005 & 0.8342 & E-15 & 0.0001 \\
- &  &  & 25 &  &  &  &  &  &  \\
- &  &  & 250 &  &  &  &  &  &  \\ \hline
+\multirow{4}{*}{B} & \multirow{4}{*}{622.26} & \multirow{4}{*}{0.83417} &
+					5  & 622.26  & 10e-15 &  0      & 0.8342 & 10e-15 & 0  \\
+ &  &  & 10  & 622.26  & 10e-12 &  0.0005 & 0.8342 & 10e-15 & 0.0001 \\
+ &  &  & 25  & 626.96  & 10e-3  &  0.76   & 0.8337 & 10e-3  & 0.05 \\
+ &  &  & 250 & 704.77  & 10e-2  &  13.26  & 0.8336 & 10e-2  & 0.06 \\ \hline
 \multirow{4}{*}{C} & \multirow{4}{*}{2.8994} & \multirow{4}{*}{0.15075} & 5 &  &  &  &  &  &  \\
  &  &  & 10 & 2.9746 & 0.38 & 2.6 & 0.15033 & 0.0035 & 0.28 \\
  &  &  & 25 &  &  &  &  &  &  \\
